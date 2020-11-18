@@ -20,9 +20,7 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="1c4b2056-cdc8-4371-8fff-d3e2279bf285" name="Default Changelist" comment="tao csdl">
-      <change afterPath="$PROJECT_DIR$/.idea/vcs.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/data/cache/settings/vi_8f57ec1ae87d4f3cb6c7ba20520b42af_c853da9a0a9cc411a9eb5ebe2a7b954f.cache" beforeDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -35,6 +33,9 @@
   </component>
   <component name="Git.Settings">
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
+  </component>
+  <component name="GithubDefaultAccount">
+    <option name="defaultAccountId" value="1ab6c696-343e-4423-879b-64de4dd3b31f" />
   </component>
   <component name="PhpWorkspaceProjectConfiguration">
     <include_path>
@@ -63,7 +64,7 @@
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="last_opened_file_path" value="$PROJECT_DIR$" />
     <property name="nodejs_package_manager_path" value="npm" />
-    <property name="settings.editor.selected.configurable" value="vcs.Git" />
+    <property name="settings.editor.selected.configurable" value="org.jetbrains.plugins.github.ui.GithubSettingsConfigurable" />
     <property name="vue.rearranger.settings.migration" value="true" />
   </component>
   <component name="RecentsManager">
@@ -80,7 +81,8 @@
       <option name="presentableId" value="Default" />
       <updated>1605668016522</updated>
       <workItem from="1605668017577" duration="746000" />
-      <workItem from="1605668984481" duration="2018000" />
+      <workItem from="1605668984481" duration="2586000" />
+      <workItem from="1605671613786" duration="90000" />
     </task>
     <task id="LOCAL-00001" summary="tạo file .gitignore">
       <created>1605670749561</created>
@@ -112,6 +114,7 @@
         </entry>
       </map>
     </option>
+    <option name="oldMeFiltersMigrated" value="true" />
   </component>
   <component name="VcsManagerConfiguration">
     <MESSAGE value="tạo file .gitignore" />
@@ -128,9 +131,13 @@
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
     <state x="837" y="422" key="Github.ShareDialog/0.0.1920.1040@0.0.1920.1040" timestamp="1605668728026" />
-    <state x="463" y="166" key="SettingsEditor" timestamp="1605671018642">
+    <state x="463" y="166" key="SettingsEditor" timestamp="1605671703992">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state x="463" y="166" key="SettingsEditor/0.0.1920.1040@0.0.1920.1040" timestamp="1605671018642" />
+    <state x="463" y="166" key="SettingsEditor/0.0.1920.1040@0.0.1920.1040" timestamp="1605671703992" />
+    <state x="781" y="436" key="com.intellij.openapi.vcs.update.UpdateOrStatusOptionsDialogupdate-v2" timestamp="1605671220110">
+      <screen x="0" y="0" width="1920" height="1040" />
+    </state>
+    <state x="781" y="436" key="com.intellij.openapi.vcs.update.UpdateOrStatusOptionsDialogupdate-v2/0.0.1920.1040@0.0.1920.1040" timestamp="1605671220110" />
   </component>
 </project>
