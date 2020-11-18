@@ -1,148 +1,22 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
-  <component name="BranchesTreeState">
-    <expand>
-      <path>
-        <item name="ROOT" type="e8cecc67:BranchNodeDescriptor" />
-        <item name="LOCAL_ROOT" type="e8cecc67:BranchNodeDescriptor" />
-      </path>
-      <path>
-        <item name="ROOT" type="e8cecc67:BranchNodeDescriptor" />
-        <item name="REMOTE_ROOT" type="e8cecc67:BranchNodeDescriptor" />
-      </path>
-      <path>
-        <item name="ROOT" type="e8cecc67:BranchNodeDescriptor" />
-        <item name="REMOTE_ROOT" type="e8cecc67:BranchNodeDescriptor" />
-        <item name="GROUP_NODE:origin" type="e8cecc67:BranchNodeDescriptor" />
-      </path>
-    </expand>
-    <select />
-  </component>
   <component name="ChangeListManager">
-    <list default="true" id="1c4b2056-cdc8-4371-8fff-d3e2279bf285" name="Default Changelist" comment="tao csdl">
-      <change beforePath="$PROJECT_DIR$/github.txt" beforeDir="false" afterPath="$PROJECT_DIR$/github.txt" afterDir="false" />
-    </list>
+    <list default="true" id="2c2cef79-fc57-48ca-8906-8ba82309834a" name="Default Changelist" comment="" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
     <option name="LAST_RESOLUTION" value="IGNORE" />
   </component>
-  <component name="ComposerSettings" doNotAsk="true" synchronizationState="SYNCHRONIZE">
-    <pharConfigPath>$PROJECT_DIR$/composer.json</pharConfigPath>
+  <component name="ComposerSettings">
     <execution />
   </component>
-  <component name="Git.Settings">
-    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
-  </component>
-  <component name="GithubDefaultAccount">
-    <option name="defaultAccountId" value="1ab6c696-343e-4423-879b-64de4dd3b31f" />
-  </component>
-  <component name="PhpWorkspaceProjectConfiguration">
-    <include_path>
-      <path value="$PROJECT_DIR$/vendor/phpmailer/phpmailer" />
-      <path value="$PROJECT_DIR$/vendor/true/punycode" />
-      <path value="$PROJECT_DIR$/vendor/and/oauth" />
-      <path value="$PROJECT_DIR$/vendor/endroid/qrcode" />
-      <path value="$PROJECT_DIR$/vendor/league/url" />
-      <path value="$PROJECT_DIR$/vendor/vinades/pclzip" />
-      <path value="$PROJECT_DIR$/vendor/kriswallsmith/buzz" />
-      <path value="$PROJECT_DIR$/vendor/vinades/nukeviet" />
-      <path value="$PROJECT_DIR$/vendor/gregwar/cache" />
-      <path value="$PROJECT_DIR$/vendor/symfony/polyfill-mbstring" />
-      <path value="$PROJECT_DIR$/vendor/composer" />
-      <path value="$PROJECT_DIR$/vendor/gregwar/image" />
-      <path value="$PROJECT_DIR$/vendor/symfony/options-resolver" />
-    </include_path>
-  </component>
-  <component name="ProjectId" id="1kRepoJ9ceIkb9OYv713xwSO1CL" />
   <component name="ProjectLevelVcsManager">
     <ConfirmationsSetting value="2" id="Add" />
   </component>
-  <component name="ProjectViewState">
-    <option name="hideEmptyMiddlePackages" value="true" />
-    <option name="showLibraryContents" value="true" />
-  </component>
-  <component name="PropertiesComponent">
-    <property name="ASKED_ADD_EXTERNAL_FILES" value="true" />
-    <property name="RunOnceActivity.OpenProjectViewOnStart" value="true" />
-    <property name="WebServerToolWindowFactoryState" value="false" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$" />
-    <property name="nodejs_package_manager_path" value="npm" />
-    <property name="settings.editor.selected.configurable" value="org.jetbrains.plugins.github.ui.GithubSettingsConfigurable" />
-    <property name="vue.rearranger.settings.migration" value="true" />
-  </component>
-  <component name="RecentsManager">
-    <key name="CopyFile.RECENT_KEYS">
-      <recent name="C:\xampp\htdocs\shoplaptop" />
-    </key>
-  </component>
-  <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
   <component name="TaskManager">
-    <task active="true" id="Default" summary="Default task">
-      <changelist id="1c4b2056-cdc8-4371-8fff-d3e2279bf285" name="Default Changelist" comment="" />
-      <created>1605668016522</created>
-      <option name="number" value="Default" />
-      <option name="presentableId" value="Default" />
-      <updated>1605668016522</updated>
-      <workItem from="1605668017577" duration="746000" />
-      <workItem from="1605668984481" duration="2586000" />
-      <workItem from="1605671613786" duration="90000" />
-    </task>
-    <task id="LOCAL-00001" summary="tạo file .gitignore">
-      <created>1605670749561</created>
-      <option name="number" value="00001" />
-      <option name="presentableId" value="LOCAL-00001" />
-      <option name="project" value="LOCAL" />
-      <updated>1605670749561</updated>
-    </task>
-    <task id="LOCAL-00002" summary="tao csdl">
-      <created>1605670887722</created>
-      <option name="number" value="00002" />
-      <option name="presentableId" value="LOCAL-00002" />
-      <option name="project" value="LOCAL" />
-      <updated>1605670887722</updated>
-    </task>
-    <option name="localTasksCounter" value="3" />
     <servers />
   </component>
-  <component name="TypeScriptGeneratedFilesManager">
-    <option name="version" value="3" />
-  </component>
   <component name="Vcs.Log.Tabs.Properties">
-    <option name="TAB_STATES">
-      <map>
-        <entry key="MAIN">
-          <value>
-            <State />
-          </value>
-        </entry>
-      </map>
-    </option>
     <option name="oldMeFiltersMigrated" value="true" />
-  </component>
-  <component name="VcsManagerConfiguration">
-    <option name="ADD_EXTERNAL_FILES_SILENTLY" value="true" />
-    <MESSAGE value="tạo file .gitignore" />
-    <MESSAGE value="note cdsl" />
-    <MESSAGE value="tao csdl" />
-    <option name="LAST_COMMIT_MESSAGE" value="tao csdl" />
-  </component>
-  <component name="WindowStateProjectService">
-    <state x="718" y="329" key="#com.intellij.fileTypes.FileTypeChooser" timestamp="1605670679808">
-      <screen x="0" y="0" width="1920" height="1040" />
-    </state>
-    <state x="718" y="329" key="#com.intellij.fileTypes.FileTypeChooser/0.0.1920.1040@0.0.1920.1040" timestamp="1605670679808" />
-    <state x="837" y="422" key="Github.ShareDialog" timestamp="1605668728026">
-      <screen x="0" y="0" width="1920" height="1040" />
-    </state>
-    <state x="837" y="422" key="Github.ShareDialog/0.0.1920.1040@0.0.1920.1040" timestamp="1605668728026" />
-    <state x="463" y="166" key="SettingsEditor" timestamp="1605671703992">
-      <screen x="0" y="0" width="1920" height="1040" />
-    </state>
-    <state x="463" y="166" key="SettingsEditor/0.0.1920.1040@0.0.1920.1040" timestamp="1605671703992" />
-    <state x="781" y="436" key="com.intellij.openapi.vcs.update.UpdateOrStatusOptionsDialogupdate-v2" timestamp="1605671220110">
-      <screen x="0" y="0" width="1920" height="1040" />
-    </state>
-    <state x="781" y="436" key="com.intellij.openapi.vcs.update.UpdateOrStatusOptionsDialogupdate-v2/0.0.1920.1040@0.0.1920.1040" timestamp="1605671220110" />
   </component>
 </project>
