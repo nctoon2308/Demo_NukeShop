@@ -1,7 +1,7 @@
 Trước tiên khởi tạo dự án:
 git init
 
-Thêm file vào git:
+Thêm file vào git :
 git add .
 
 Commit những thay đổi bằng thông điệp
