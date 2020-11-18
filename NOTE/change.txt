@@ -1,0 +1,6 @@
+#18/11/2020 Thêm CSDL, đổi tên CSDL.
+    RENAME TABLE `orderdetail` TO `nv4_orderdetail`;
+    RENAME TABLE `orders` TO `nv4_orders`;
+    RENAME TABLE `users` TO `nv4_users_shop`;
+    RENAME TABLE `products` TO `nv4_products`;
+    RENAME TABLE category` TO `nv4_category`;
