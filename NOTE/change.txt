@@ -1,3 +1,5 @@
+#18/11/2020 Download và cài vào http://localhost/shoplaptop/
+
 #18/11/2020 Thêm CSDL, đổi tên CSDL.
     RENAME TABLE `orderdetail` TO `nv4_orderdetail`;
     RENAME TABLE `orders` TO `nv4_orders`;
