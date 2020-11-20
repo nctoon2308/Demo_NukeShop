@@ -53,6 +53,9 @@
     </include_path>
   </component>
   <component name="ProjectId" id="1kRepoJ9ceIkb9OYv713xwSO1CL" />
+  <component name="ProjectLevelVcsManager">
+    <ConfirmationsSetting value="2" id="Add" />
+  </component>
   <component name="ProjectViewState">
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
@@ -81,6 +84,7 @@
       <workItem from="1605668017577" duration="746000" />
       <workItem from="1605668984481" duration="2586000" />
       <workItem from="1605671613786" duration="90000" />
+      <workItem from="1605835853790" duration="390000" />
     </task>
     <task id="LOCAL-00001" summary="tạo file .gitignore">
       <created>1605670749561</created>
