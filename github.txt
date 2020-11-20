@@ -7,7 +7,7 @@ git add .
 Commit những thay đổi bằng thông điệp
 git commit -m "aa"	
 
-Thêm nguồn gốc từ xa nơi dự án sẽ được đẩy
+Thêm nguồn gốc từ xa nơi dự án sẽ  được đẩy
 git remote add origin https://github.com/nctoon2308/Demo_NukeShop {Ten Repositories}
 
 Cuối cùng nhưng không kém phần quan trọng, đẩy nó vào github
