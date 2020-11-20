@@ -21,3 +21,4 @@ $lang_translator['langtype'] = 'lang_module';
 $lang_module['main'] = 'Trang chính';
 $lang_module['detail'] = 'Xem chi tiết';
 $lang_module['search'] = 'Tìm kiếm';
+$lang_module['list'] = 'Danh sách';
