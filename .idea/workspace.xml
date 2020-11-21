@@ -27,6 +27,11 @@
   <component name="ChangeListManager">
     <list default="true" id="1c4b2056-cdc8-4371-8fff-d3e2279bf285" name="Default Changelist" comment="tao csdl">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/NOTE/change.txt" beforeDir="false" afterPath="$PROJECT_DIR$/NOTE/change.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/modules/category/admin.menu.php" beforeDir="false" afterPath="$PROJECT_DIR$/modules/category/admin.menu.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/modules/category/admin/list.php" beforeDir="false" afterPath="$PROJECT_DIR$/modules/category/admin/list.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/modules/category/language/admin_vi.php" beforeDir="false" afterPath="$PROJECT_DIR$/modules/category/language/admin_vi.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/themes/admin_default/modules/category/list.tpl" beforeDir="false" afterPath="$PROJECT_DIR$/themes/admin_default/modules/category/list.tpl" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -71,7 +76,7 @@
   <component name="PropertiesComponent">
     <property name="RunOnceActivity.OpenProjectViewOnStart" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$/../crud" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/../nukeviet" />
     <property name="nodejs_package_manager_path" value="npm" />
     <property name="settings.editor.selected.configurable" value="org.jetbrains.plugins.github.ui.GithubSettingsConfigurable" />
     <property name="vue.rearranger.settings.migration" value="true" />
@@ -98,6 +103,7 @@
       <workItem from="1605855512593" duration="2032000" />
       <workItem from="1605858273184" duration="61000" />
       <workItem from="1605858482578" duration="697000" />
+      <workItem from="1605923420895" duration="1550000" />
     </task>
     <task id="LOCAL-00001" summary="tạo file .gitignore">
       <created>1605670749561</created>
@@ -154,10 +160,10 @@
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
     <state x="718" y="329" key="#com.intellij.fileTypes.FileTypeChooser/0.0.1920.1040@0.0.1920.1040" timestamp="1605670679808" />
-    <state x="740" y="277" key="FileChooserDialogImpl" timestamp="1605858490357">
+    <state x="740" y="277" key="FileChooserDialogImpl" timestamp="1605923732391">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state x="740" y="277" key="FileChooserDialogImpl/0.0.1920.1040@0.0.1920.1040" timestamp="1605858490357" />
+    <state x="740" y="277" key="FileChooserDialogImpl/0.0.1920.1040@0.0.1920.1040" timestamp="1605923732391" />
     <state x="837" y="422" key="Github.ShareDialog" timestamp="1605668728026">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
