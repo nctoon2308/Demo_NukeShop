@@ -19,21 +19,14 @@
     <select>
       <path>
         <item name="ROOT" type="e8cecc67:BranchNodeDescriptor" />
-        <item name="REMOTE_ROOT" type="e8cecc67:BranchNodeDescriptor" />
-        <item name="GROUP_NODE:origin" type="e8cecc67:BranchNodeDescriptor" />
-        <item name="BRANCH:origin/master" type="e8cecc67:BranchNodeDescriptor" />
+        <item name="LOCAL_ROOT" type="e8cecc67:BranchNodeDescriptor" />
+        <item name="BRANCH:develop" type="e8cecc67:BranchNodeDescriptor" />
       </path>
     </select>
   </component>
   <component name="ChangeListManager">
     <list default="true" id="1c4b2056-cdc8-4371-8fff-d3e2279bf285" name="Default Changelist" comment="tao csdl">
-      <change afterPath="$PROJECT_DIR$/modules/category/admin/list.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/themes/admin_default/modules/category/list.tpl" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/modules/category/admin.functions.php" beforeDir="false" afterPath="$PROJECT_DIR$/modules/category/admin.functions.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/modules/category/admin.menu.php" beforeDir="false" afterPath="$PROJECT_DIR$/modules/category/admin.menu.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/modules/category/functions.php" beforeDir="false" afterPath="$PROJECT_DIR$/modules/category/functions.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/modules/category/language/vi.php" beforeDir="false" afterPath="$PROJECT_DIR$/modules/category/language/vi.php" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -78,7 +71,7 @@
   <component name="PropertiesComponent">
     <property name="RunOnceActivity.OpenProjectViewOnStart" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$/modules/category/admin" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/../crud" />
     <property name="nodejs_package_manager_path" value="npm" />
     <property name="settings.editor.selected.configurable" value="org.jetbrains.plugins.github.ui.GithubSettingsConfigurable" />
     <property name="vue.rearranger.settings.migration" value="true" />
@@ -103,6 +96,8 @@
       <workItem from="1605671613786" duration="90000" />
       <workItem from="1605836317493" duration="1639000" />
       <workItem from="1605855512593" duration="2032000" />
+      <workItem from="1605858273184" duration="61000" />
+      <workItem from="1605858482578" duration="697000" />
     </task>
     <task id="LOCAL-00001" summary="tạo file .gitignore">
       <created>1605670749561</created>
@@ -135,7 +130,7 @@
                   <entry key="branch">
                     <value>
                       <list>
-                        <option value="origin/master" />
+                        <option value="develop" />
                       </list>
                     </value>
                   </entry>
@@ -159,10 +154,10 @@
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
     <state x="718" y="329" key="#com.intellij.fileTypes.FileTypeChooser/0.0.1920.1040@0.0.1920.1040" timestamp="1605670679808" />
-    <state x="740" y="277" key="FileChooserDialogImpl" timestamp="1605836820216">
+    <state x="740" y="277" key="FileChooserDialogImpl" timestamp="1605858490357">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state x="740" y="277" key="FileChooserDialogImpl/0.0.1920.1040@0.0.1920.1040" timestamp="1605836820216" />
+    <state x="740" y="277" key="FileChooserDialogImpl/0.0.1920.1040@0.0.1920.1040" timestamp="1605858490357" />
     <state x="837" y="422" key="Github.ShareDialog" timestamp="1605668728026">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
@@ -171,6 +166,10 @@
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
     <state x="463" y="166" key="SettingsEditor/0.0.1920.1040@0.0.1920.1040" timestamp="1605856856202" />
+    <state x="552" y="255" key="Vcs.Push.Dialog.v2" timestamp="1605858330205">
+      <screen x="0" y="0" width="1920" height="1040" />
+    </state>
+    <state x="552" y="255" key="Vcs.Push.Dialog.v2/0.0.1920.1040@0.0.1920.1040" timestamp="1605858330205" />
     <state x="781" y="436" key="com.intellij.openapi.vcs.update.UpdateOrStatusOptionsDialogupdate-v2" timestamp="1605671220110">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
