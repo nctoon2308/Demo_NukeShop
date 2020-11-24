@@ -82,12 +82,18 @@ if (!empty($post['submit'])){
         //UPDATE
         }
         else {
-
+            $db->sqlreset()
+                ->select('COUNT(*)')
+                ->from($db_config['prefix'] . '_' . 'product');
+            $sql2 = $db->sql();
+            $total = $db->query($sql2)->fetchColumn();
             /*$sql = "INSERT INTO `nv4_product`(`product_name`, `product_image`,`product_desc`, `product_quantity`,`product_price`,  `product_status`,
             `category_id`) VALUES (:product_name,:product_image, :product_desc, :product_quantity, :product_price,  :product_status, :category_id)";*/
-            $sql = "INSERT INTO `nv4_product`(`product_name`, `product_image`,`product_desc`, `product_quantity`,`product_price`,`product_status`, `category_id`,`created_at`) VALUES (:product_name,:product_image, :product_desc,:product_quantity, :product_price,:product_status, :category_id,:created_at)";
+            $sql = "INSERT INTO `nv4_product`(`product_name`, `product_image`,`product_desc`, `product_quantity`,`product_price`,`product_status`, `category_id`,`created_at`,`weight`) 
+            VALUES (:product_name,:product_image, :product_desc,:product_quantity, :product_price,:product_status, :category_id,:created_at,:weight)";
             $sth = $db->prepare($sql);
 
+            $sth->bindValue('weight', $total + 1);
             $sth->bindValue('created_at', NV_CURRENTTIME);
 
         }

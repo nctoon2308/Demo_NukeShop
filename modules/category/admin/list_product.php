@@ -104,6 +104,13 @@ if (!empty($array_row)){
         if (!empty($row['product_image']))
             $row['product_image'] = NV_BASE_SITEURL.NV_UPLOADS_DIR.'/'.$module_name.'/'. $row['product_image'];
 
+        //Trạng thái hàng hoá
+        if ($row['product_status']==0){
+            $row['product_status'] = "Tạm ngưng bán";
+        }else{
+            $row['product_status'] = "Còn hàng";
+        }
+
         $row['url_delete'] = NV_BASE_ADMINURL . 'index.php?' . NV_LANG_VARIABLE . '=' . NV_LANG_DATA . '&amp;' . NV_NAME_VARIABLE . '=' .$module_name. '&amp;' . NV_OP_VARIABLE .'=list_product&amp;id='.$row['id'].'&action=delete&checksess='. md5($row['id'].NV_CHECK_SESSION) ;
         $row['url_edit'] = NV_BASE_ADMINURL . 'index.php?' . NV_LANG_VARIABLE . '=' . NV_LANG_DATA . '&amp;' . NV_NAME_VARIABLE . '=' .$module_name.'&amp;' . NV_OP_VARIABLE . '=crud_product&amp;id=' . $row['id'];
 
