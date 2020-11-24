@@ -62,7 +62,7 @@
         $.ajax({
             url: script_name + '?' + nv_name_variable + '=' + nv_module_name
                 + '&' + nv_fc_variable
-                + '=list&change_weight=1&id=' + id + '&new_weight='+new_weight,
+                + '=list_product&change_weight=1&id=' + id + '&new_weight='+new_weight,
             success: function (result) {
                 if (result!='ERR'){
 
