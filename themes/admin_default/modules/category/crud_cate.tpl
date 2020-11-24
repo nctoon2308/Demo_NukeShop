@@ -16,9 +16,6 @@
         <div class="form-group">
             <label for="category_image">Ảnh danh mục:</label>
             <input type="file" class="form-control" name="category_image" id="category_image" value="">
-            <td class="">
-                <img src="{POST.category_image}" width="250px" height="250px" alt="Ảnh cũ">
-            </td>
         </div>
         <div class="form-group">
             <label for="category_image">Mô tả danh mục:</label>
