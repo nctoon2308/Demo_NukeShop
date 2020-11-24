@@ -10,7 +10,7 @@
     ALTER TABLE `nv4_product` ADD `weight` INT(11) NOT NULL DEFAULT '0' AFTER `category_id`;
 
     RENAME TABLE `shoplaptop`.`orders` TO `shoplaptop`.`nv4_orders2`;
-    RENAME TABLE `shoplaptop`.`orderdetail` TO `shoplaptop`.`nv_orderdetail2`;
+    RENAME TABLE `shoplaptop`.`orderdetail` TO `shoplaptop`.`nv4_orderdetail2`;
 
 
 #21/11/2020 Thêm cột weight cho nv4_categories
