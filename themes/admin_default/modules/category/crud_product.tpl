@@ -5,7 +5,7 @@
 <form enctype="multipart/form-data" action="{NV_BASE_ADMINURL}index.php?{NV_LANG_VARIABLE}={NV_LANG_DATA}&amp;{NV_NAME_VARIABLE}={MODULE_NAME}&amp;{NV_OP_VARIABLE}={OP}" method="post" name="{MODULE_NAME}">
     <div class="form-group">
         <label for="product_name">Tên sản phẩm:</label>
-        <input type="text" name="product_name" class="form-control" id="product_name" value="">
+        <input type="text" name="product_name" class="form-control" id="product_name" value="{POST.product_name}">
     </div>
     <div class="form-group">
         <label for="product_category">Danh mục sản phẩm:</label>
@@ -27,15 +27,15 @@
     </div>
     <div class="form-group">
         <label for="product_image">Mô tả sản phẩm:</label>
-        <textarea name="product_desc" class="form-control" id="product_desc"  rows="10"></textarea>
+        <textarea name="product_desc" class="form-control" id="product_desc"  rows="10">{POST.product_desc}</textarea>
     </div>
     <div class="form-group">
         <label for="product_quantity">Số lượng sản phẩm:</label>
-        <input type="number" name="product_quantity" style="width: 250px" class="form-control" id="product_quantity" value="">
+        <input type="number" name="product_quantity" style="width: 250px" class="form-control" id="product_quantity" value="{POST.product_quantity}">
     </div>
     <div class="form-group">
         <label for="product_quantity">Giá bán sản phẩm:</label>
-        <input type="number" name="product_price" style="width: 250px" class="form-control" id="product_price" value="">
+        <input type="number" name="product_price" style="width: 250px" class="form-control" id="product_price" value="{POST.product_price}">
     </div>
     <div class="text-center"><input class="btn btn-primary" name="submit" type="submit" value="{LANG.save}" /></div>
 </form>
