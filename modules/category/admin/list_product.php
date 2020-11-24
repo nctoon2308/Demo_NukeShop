@@ -110,6 +110,23 @@ if (!empty($array_row)){
         }else{
             $row['product_status'] = "Còn hàng";
         }
+        if (!empty($row['category_id'])){
+           /* $sql = "SELECT category_name FROM nv4_categories WHERE nv4_categories.id=".$row['category_id'];*/
+            /*$db->sqlreset()
+                ->select('category_name')
+                ->from('nv4_categories')
+                ->where('nv4_categories.id=15');
+            $sql3 = $db->sql();
+            $result = $db->query($sql3);*/
+            $db->sqlreset()
+                ->select('*')
+                ->from('nv4_categories')
+                ->where('nv4_categories.id='.$row['category_id']);
+            $sql3 = $db->sql();
+            $result = $db->query($sql3);
+            $array_row = $result->fetch();
+            $row['category_id'] = $array_row['category_name'];
+        }
 
         $row['url_delete'] = NV_BASE_ADMINURL . 'index.php?' . NV_LANG_VARIABLE . '=' . NV_LANG_DATA . '&amp;' . NV_NAME_VARIABLE . '=' .$module_name. '&amp;' . NV_OP_VARIABLE .'=list_product&amp;id='.$row['id'].'&action=delete&checksess='. md5($row['id'].NV_CHECK_SESSION) ;
         $row['url_edit'] = NV_BASE_ADMINURL . 'index.php?' . NV_LANG_VARIABLE . '=' . NV_LANG_DATA . '&amp;' . NV_NAME_VARIABLE . '=' .$module_name.'&amp;' . NV_OP_VARIABLE . '=crud_product&amp;id=' . $row['id'];

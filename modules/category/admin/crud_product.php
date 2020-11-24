@@ -124,6 +124,8 @@ if (!empty($post['submit'])){
         $post['product_image'] = NV_BASE_SITEURL.NV_UPLOADS_DIR.'/'.$module_name.'/'. $post['product_image'];
     }
 
+
+
 } else{
     $post['category_name'] = "";
     $post['category_slug'] = "";

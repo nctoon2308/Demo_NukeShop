@@ -5,6 +5,7 @@
         <tr class="text-center">
             <th class="text-nowrap">Số thứ tự</th>
             <th class="text-nowrap">Tên sản phẩm</th>
+            <th class="text-nowrap">Danh mục</th>
             <th class="text-nowrap">Trạng thái</th>
             <th class="text-nowrap">Ảnh</th>
             <th class="text-nowrap">Mô tả</th>
@@ -24,6 +25,7 @@
                 </select>
             </td>
             <td class="">{ROW.product_name}</td>
+            <td class="">{ROW.category_id}</td>
             <td class="">{ROW.product_status}</td>
 
             <td class="">
