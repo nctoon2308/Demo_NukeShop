@@ -1,3 +1,7 @@
+#20/11/2020 Đổi tên CSDL
+    RENAME TABLE `nv4_category` TO `nv4_categories`;
+    Tạo form thêm danh mục sản phẩm
+
 #18/11/2020 Download và cài vào http://localhost/shoplaptop/
 
 #18/11/2020 Thêm CSDL, đổi tên CSDL.
@@ -5,4 +9,4 @@
     RENAME TABLE `orders` TO `nv4_orders`;
     RENAME TABLE `users` TO `nv4_users_shop`;
     RENAME TABLE `products` TO `nv4_products`;
-    RENAME TABLE category` TO `nv4_category`;
+    RENAME TABLE `category` TO `nv4_category`;

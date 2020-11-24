@@ -5,7 +5,7 @@
  * @Author VINADES.,JSC <contact@vinades.vn>
  * @Copyright (C) 2020 VINADES.,JSC. All rights reserved
  * @License GNU/GPL version 2 or any later version
- * @Createdate Wed, 18 Nov 2020 02:52:05 GMT
+ * @Createdate Fri, 20 Nov 2020 07:15:31 GMT
  */
 
 if (!defined('NV_MAINFILE')) {
@@ -15,7 +15,7 @@ if (!defined('NV_MAINFILE')) {
 define('NV_ALLOWED_HTML_TAGS', 'embed, object, param, a, b, blockquote, br, caption, col, colgroup, div, em, h1, h2, h3, h4, h5, h6, hr, i, img, li, p, span, strong, s, sub, sup, table, tbody, td, th, tr, u, ul, ol, iframe, figure, figcaption, video, audio, source, track, code, pre');
 define('NV_ANTI_AGENT', 0);
 define('NV_ANTI_IFRAME', 1);
-define('NV_DEBUG', 0);
+define('NV_DEBUG', 1);
 define('NV_GFX_HEIGHT', 40);
 define('NV_GFX_NUM', 6);
 define('NV_GFX_WIDTH', 150);
@@ -52,7 +52,7 @@ $global_config['dump_autobackup']=1;
 $global_config['dump_backup_day']=30;
 $global_config['dump_backup_ext']='gz';
 $global_config['dump_interval']=1;
-$global_config['error_send_email']='webmaster@localhost';
+$global_config['error_send_email']='';
 $global_config['error_set_logs']=1;
 $global_config['file_allowed_ext']=['adobe','archives','audio','documents','flash','images','real','video'];
 $global_config['forbid_extensions']=['php','php3','php4','php5','phtml','inc'];
