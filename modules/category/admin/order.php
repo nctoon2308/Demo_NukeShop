@@ -16,6 +16,36 @@ $page_title = $lang_module['config'];
 
 //------------------------------
 // Viết code xử lý chung vào đây
+//phan trang
+$page_title = $lang_module['main'];
+
+$perpage = 5;
+$page = $nv_Request->get_int('page','get',1);
+
+$db->sqlreset()
+    ->select('COUNT(*)')
+    ->from($db_config['prefix'].'_'.'orders2');
+$sql = $db->sql();
+$total = $db->query($sql)->fetchColumn();
+
+$db->select('*')
+    ->limit($perpage)
+    ->offset(($page-1)*$perpage);
+
+$sql = $db->sql();
+$result = $db->query($sql);
+while ($row = $result->fetch()){
+    $array_row[$row['id']] = $row;
+}
+
+
+if ($nv_Request->isset_request('action','post,get')){
+    $id = $nv_Request->get_int('id','post,get',0);
+    $checksess = $nv_Request->get_title('checksess','post,get',0);
+    if($id>0 && $checksess==md5($id.NV_CHECK_SESSION)){
+        $db->query("DELETE FROM `nv4_orders2` WHERE id=".$id);
+    }
+}
 //------------------------------
 
 $xtpl = new XTemplate('order.tpl', NV_ROOTDIR . '/themes/' . $global_config['module_theme'] . '/modules/' . $module_file);
@@ -30,7 +60,29 @@ $xtpl->assign('OP', $op);
 
 //-------------------------------
 // Viết code xuất ra site vào đây
+
+if (!empty($array_row)){
+    $i = ($page-1) * $perpage;
+    foreach ($array_row as $row){
+        $row['stt'] = $i+1;
+        $i++;
+        //hiển thị danh mục
+
+        $row['url_delete'] = NV_BASE_ADMINURL . 'index.php?' . NV_LANG_VARIABLE . '=' . NV_LANG_DATA . '&amp;' . NV_NAME_VARIABLE . '=' .$module_name. '&amp;' . NV_OP_VARIABLE .'=order&amp;id='.$row['id'].'&action=delete&checksess='. md5($row['id'].NV_CHECK_SESSION) ;
+        $row['url_edit'] = NV_BASE_ADMINURL . 'index.php?' . NV_LANG_VARIABLE . '=' . NV_LANG_DATA . '&amp;' . NV_NAME_VARIABLE . '=' .$module_name.'&amp;' . NV_OP_VARIABLE . '=crud_order&amp;id=' . $row['id'];
+
+        $xtpl->assign('ROW',$row);
+        $xtpl->parse('main.loop');
+
+
+    }
+}
 //-------------------------------
+
+$base_url =NV_BASE_ADMINURL . 'index.php?' . NV_LANG_VARIABLE . '=' . NV_LANG_DATA . '&amp;' . NV_NAME_VARIABLE . '=' .$module_name.'&amp;' . NV_OP_VARIABLE . '=order';
+$generate_page=nv_generate_page($base_url,$total,$perpage,$page);
+$xtpl->assign('GENERATE_PAGE',$generate_page);
+$xtpl->parse('main.GENERATE_PAGE');
 
 $xtpl->parse('main');
 $contents = $xtpl->text('main');
