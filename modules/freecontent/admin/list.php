@@ -22,7 +22,7 @@ if ($bid) {
 $page_title = $lang_module['content_list'] . ': ' . $block['title'];
 
 // Write row
-$xtpl = new XTemplate('list.tpl', NV_ROOTDIR . '/themes/' . $global_config['module_theme'] . '/modules/' . $module_file);
+$xtpl = new XTemplate('list_cate.tpl', NV_ROOTDIR . '/themes/' . $global_config['module_theme'] . '/modules/' . $module_file);
 $xtpl->assign('LANG', $lang_module);
 $xtpl->assign('GLANG', $lang_global);
 

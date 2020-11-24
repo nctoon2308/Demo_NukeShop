@@ -27,7 +27,12 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="1c4b2056-cdc8-4371-8fff-d3e2279bf285" name="Default Changelist" comment="tao csdl">
+      <change afterPath="$PROJECT_DIR$/modules/category/admin/crud_cate.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/themes/admin_default/modules/category/crud_cate.tpl" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/data/cache/modules/vi_sitemods_c853da9a0a9cc411a9eb5ebe2a7b954f.cache" beforeDir="false" afterPath="$PROJECT_DIR$/data/cache/modules/vi_sitemods_c853da9a0a9cc411a9eb5ebe2a7b954f.cache" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/modules/category/language/admin_vi.php" beforeDir="false" afterPath="$PROJECT_DIR$/modules/category/language/admin_vi.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/modules/freecontent/admin/list.php" beforeDir="false" afterPath="$PROJECT_DIR$/modules/freecontent/admin/list.php" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -75,9 +80,9 @@
   <component name="PropertiesComponent">
     <property name="RunOnceActivity.OpenProjectViewOnStart" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$/../nukeviet" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/themes/admin_default/modules/category" />
     <property name="nodejs_package_manager_path" value="npm" />
-    <property name="settings.editor.selected.configurable" value="preferences.pluginManager" />
+    <property name="settings.editor.selected.configurable" value="preferences.lookFeel" />
     <property name="vue.rearranger.settings.migration" value="true" />
   </component>
   <component name="RecentsManager">
@@ -105,7 +110,11 @@
       <workItem from="1605923420895" duration="3042000" />
       <workItem from="1605932594353" duration="63000" />
       <workItem from="1605932713426" duration="101000" />
-      <workItem from="1605932824537" duration="83000" />
+      <workItem from="1605932824537" duration="369000" />
+      <workItem from="1606013141564" duration="48000" />
+      <workItem from="1606055156700" duration="14000" />
+      <workItem from="1606095502410" duration="165000" />
+      <workItem from="1606181555300" duration="6515000" />
     </task>
     <task id="LOCAL-00001" summary="tạo file .gitignore">
       <created>1605670749561</created>
@@ -121,7 +130,14 @@
       <option name="project" value="LOCAL" />
       <updated>1605670887722</updated>
     </task>
-    <option name="localTasksCounter" value="3" />
+    <task id="LOCAL-00003" summary="sửa + xoá danh mục sản phẩm">
+      <created>1606187235485</created>
+      <option name="number" value="00003" />
+      <option name="presentableId" value="LOCAL-00003" />
+      <option name="project" value="LOCAL" />
+      <updated>1606187235485</updated>
+    </task>
+    <option name="localTasksCounter" value="4" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -155,25 +171,30 @@
     <MESSAGE value="tạo file .gitignore" />
     <MESSAGE value="note cdsl" />
     <MESSAGE value="tao csdl" />
-    <option name="LAST_COMMIT_MESSAGE" value="tao csdl" />
+    <MESSAGE value="sửa + xoá danh mục sản phẩm" />
+    <option name="LAST_COMMIT_MESSAGE" value="sửa + xoá danh mục sản phẩm" />
   </component>
   <component name="WindowStateProjectService">
+    <state x="752" y="381" key="#Scopes" timestamp="1606187612565">
+      <screen x="0" y="0" width="1920" height="1040" />
+    </state>
+    <state x="752" y="381" key="#Scopes/0.0.1920.1040@0.0.1920.1040" timestamp="1606187612565" />
     <state x="718" y="329" key="#com.intellij.fileTypes.FileTypeChooser" timestamp="1605670679808">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
     <state x="718" y="329" key="#com.intellij.fileTypes.FileTypeChooser/0.0.1920.1040@0.0.1920.1040" timestamp="1605670679808" />
-    <state x="740" y="277" key="FileChooserDialogImpl" timestamp="1605923732391">
+    <state x="740" y="277" key="FileChooserDialogImpl" timestamp="1606181637435">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state x="740" y="277" key="FileChooserDialogImpl/0.0.1920.1040@0.0.1920.1040" timestamp="1605923732391" />
+    <state x="740" y="277" key="FileChooserDialogImpl/0.0.1920.1040@0.0.1920.1040" timestamp="1606181637435" />
     <state x="837" y="422" key="Github.ShareDialog" timestamp="1605668728026">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
     <state x="837" y="422" key="Github.ShareDialog/0.0.1920.1040@0.0.1920.1040" timestamp="1605668728026" />
-    <state x="463" y="166" key="SettingsEditor" timestamp="1605932907010">
+    <state x="463" y="166" key="SettingsEditor" timestamp="1606095545371">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state x="463" y="166" key="SettingsEditor/0.0.1920.1040@0.0.1920.1040" timestamp="1605932907010" />
+    <state x="463" y="166" key="SettingsEditor/0.0.1920.1040@0.0.1920.1040" timestamp="1606095545371" />
     <state x="552" y="255" key="Vcs.Push.Dialog.v2" timestamp="1605858330205">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
