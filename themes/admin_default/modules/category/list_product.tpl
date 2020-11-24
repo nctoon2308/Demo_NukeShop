@@ -23,13 +23,15 @@
                     <!-- END: weight -->
                 </select>
             </td>
-            <td class="">{ROW.category_name}</td>
-            <td class="">{ROW.category_slug}</td>
+            <td class="">{ROW.product_name}</td>
+            <td class="">{ROW.product_status}</td>
 
             <td class="">
-                <img src="{ROW.category_image}" width="100px" height="100px">
+                <img src="{ROW.product_image}" width="100px" height="100px">
             </td>
-            <td class="">{ROW.category_desc}</td>
+            <td class="">{ROW.product_desc}</td>
+            <td class="">{ROW.product_quantity}</td>
+            <td class="">{ROW.product_price}</td>
             <td class="text-center text-nowrap">
                 <a href="{ROW.url_edit}" class="btn btn-default btn-sm"><i class="fa fa-edit"></i>Sửa</a>
                 <a href="{ROW.url_delete}" class="btn btn-danger btn-sm delete"><i class="fa fa-edit"></i>Xoá</a>

@@ -22,7 +22,7 @@ if ($nv_Request->isset_request('change_weight','post,get')){
     $id = $nv_Request->get_int('id','post,get',0);
     $new_weight = $nv_Request->get_int('new_weight','post,get',0);
     if ($id>0 && $new_weight>0){
-        $sql = "SELECT id, weight FROM `nv4_products` WHERE id != " .$id;
+        $sql = "SELECT id, weight FROM `nv4_product` WHERE id != " .$id;
         $result = $db->query($sql);
         $weight = 0;
         while ($row = $result->fetch()){
@@ -30,10 +30,10 @@ if ($nv_Request->isset_request('change_weight','post,get')){
             if ($weight == $new_weight){
                 ++$weight;
             }
-            $exe = $db->query("UPDATE `nv4_categories` SET weight = " . $weight ." WHERE id = ".$row['id']);
+            $exe = $db->query("UPDATE `nv4_product` SET weight = " . $weight ." WHERE id = ".$row['id']);
         }
 
-        $exe = $db->query("UPDATE `nv4_categories` SET weight = " . $new_weight ." WHERE id = ".$id);
+        $exe = $db->query("UPDATE `nv4_product` SET weight = " . $new_weight ." WHERE id = ".$id);
     }
 }
 
@@ -46,7 +46,7 @@ $page = $nv_Request->get_int('page','get',1);
 
 $db->sqlreset()
     ->select('COUNT(*)')
-    ->from($db_config['prefix'].'_'.'categories');
+    ->from($db_config['prefix'].'_'.'product');
 $sql = $db->sql();
 $total = $db->query($sql)->fetchColumn();
 
@@ -72,7 +72,7 @@ if ($nv_Request->isset_request('action','post,get')){
     $id = $nv_Request->get_int('id','post,get',0);
     $checksess = $nv_Request->get_title('checksess','post,get',0);
     if($id>0 && $checksess==md5($id.NV_CHECK_SESSION)){
-        $db->query("DELETE FROM `nv4_categories` WHERE id=".$id);
+        $db->query("DELETE FROM `nv4_product` WHERE id=".$id);
     }
 }
 
@@ -101,8 +101,8 @@ if (!empty($array_row)){
             $xtpl->parse('main.loop.weight');
         }
         $row['stt'] = $i+1;
-        if (!empty($row['category_image']))
-            $row['category_image'] = NV_BASE_SITEURL.NV_UPLOADS_DIR.'/'.$module_name.'/'. $row['category_image'];
+        if (!empty($row['product_image']))
+            $row['product_image'] = NV_BASE_SITEURL.NV_UPLOADS_DIR.'/'.$module_name.'/'. $row['product_image'];
 
         $row['url_delete'] = NV_BASE_ADMINURL . 'index.php?' . NV_LANG_VARIABLE . '=' . NV_LANG_DATA . '&amp;' . NV_NAME_VARIABLE . '=' .$module_name. '&amp;' . NV_OP_VARIABLE .'=list&amp;id='.$row['id'].'&action=delete&checksess='. md5($row['id'].NV_CHECK_SESSION) ;
         $row['url_edit'] = NV_BASE_ADMINURL . 'index.php?' . NV_LANG_VARIABLE . '=' . NV_LANG_DATA . '&amp;' . NV_NAME_VARIABLE . '=' .$module_name.'&amp;' . NV_OP_VARIABLE . '=crud_cate&amp;id=' . $row['id'];
@@ -115,7 +115,7 @@ if (!empty($array_row)){
 }
 
 
-$base_url =NV_BASE_ADMINURL . 'index.php?' . NV_LANG_VARIABLE . '=' . NV_LANG_DATA . '&amp;' . NV_NAME_VARIABLE . '=' .$module_name.'&amp;' . NV_OP_VARIABLE . '=list';
+$base_url =NV_BASE_ADMINURL . 'index.php?' . NV_LANG_VARIABLE . '=' . NV_LANG_DATA . '&amp;' . NV_NAME_VARIABLE . '=' .$module_name.'&amp;' . NV_OP_VARIABLE . '=list_product';
 $generate_page=nv_generate_page($base_url,$total,$perpage,$page);
 $xtpl->assign('GENERATE_PAGE',$generate_page);
 $xtpl->parse('main.GENERATE_PAGE');
