@@ -88,8 +88,22 @@ if (!empty($post['submit'])){
             } else {
                 $error[] = "Khong insert dc";
             }
-
     }
+} elseif ($post['id']>0){
+    //nếu tồn tại id thì lấy dữ liệu ra
+    $sql = "SELECT * FROM `nv4_categories` WHERE id=".$post['id'];
+    $post = $db->query($sql)->fetch();
+
+    if (!empty($post['category_image'])){
+        $post['category_image'] = NV_BASE_SITEURL.NV_UPLOADS_DIR.'/'.$module_name.'/'. $post['category_image'];
+    }
+} else{
+    $post['category_name'] = "";
+    $post['category_slug'] = "";
+    $post['category_desc'] = "";
+    $post['category_image'] = "";
+    $post['weight'] = "";
+    $post['created_at'] = "";
 }
 
 //------------------------------
