@@ -5,7 +5,7 @@
  * @Author VINADES.,JSC <contact@vinades.vn>
  * @Copyright (C) 2020 VINADES.,JSC. All rights reserved
  * @License GNU/GPL version 2 or any later version
- * @Createdate Fri, 20 Nov 2020 07:15:31 GMT
+ * @Createdate Tue, 24 Nov 2020 07:47:46 GMT
  */
 
 if (!defined('NV_MAINFILE')) {
@@ -15,7 +15,7 @@ if (!defined('NV_MAINFILE')) {
 define('NV_ALLOWED_HTML_TAGS', 'embed, object, param, a, b, blockquote, br, caption, col, colgroup, div, em, h1, h2, h3, h4, h5, h6, hr, i, img, li, p, span, strong, s, sub, sup, table, tbody, td, th, tr, u, ul, ol, iframe, figure, figcaption, video, audio, source, track, code, pre');
 define('NV_ANTI_AGENT', 0);
 define('NV_ANTI_IFRAME', 1);
-define('NV_DEBUG', 1);
+define('NV_DEBUG', 0);
 define('NV_GFX_HEIGHT', 40);
 define('NV_GFX_NUM', 6);
 define('NV_GFX_WIDTH', 150);
@@ -52,7 +52,7 @@ $global_config['dump_autobackup']=1;
 $global_config['dump_backup_day']=30;
 $global_config['dump_backup_ext']='gz';
 $global_config['dump_interval']=1;
-$global_config['error_send_email']='';
+$global_config['error_send_email']='webmaster@localhost';
 $global_config['error_set_logs']=1;
 $global_config['file_allowed_ext']=['adobe','archives','audio','documents','flash','images','real','video'];
 $global_config['forbid_extensions']=['php','php3','php4','php5','phtml','inc'];
@@ -62,7 +62,7 @@ $global_config['ftp_path']='/';
 $global_config['ftp_port']=21;
 $global_config['ftp_server']='localhost';
 $global_config['ftp_user_name']='';
-$global_config['ftp_user_pass']='z3R4szmHRdG54dXxEbXR1Q,,';
+$global_config['ftp_user_pass']='0Lk4Z8IbBtdf0uZemAN6Jw,,';
 $global_config['gfx_chk']=3;
 $global_config['gzip_method']=1;
 $global_config['is_flood_blocker']=1;
@@ -91,13 +91,13 @@ $global_config['rewrite_endurl']='/';
 $global_config['rewrite_exturl']='.html';
 $global_config['rewrite_op_mod']='news';
 $global_config['rewrite_optional']=1;
-$global_config['session_prefix']='nv4s_n7e328';
+$global_config['session_prefix']='nv4s_h7v8ls';
 $global_config['site_keywords']='NukeViet, portal, mysql, php';
 $global_config['site_lang']='vi';
 $global_config['site_timezone']='byCountry';
 $global_config['spadmin_add_admin']=1;
 $global_config['str_referer_blocker']=0;
-$global_config['timestamp']=1605667882;
+$global_config['timestamp']=1606204066;
 $global_config['two_step_verification']=0;
 $global_config['upload_alt_require']=1;
 $global_config['upload_auto_alt']=1;
