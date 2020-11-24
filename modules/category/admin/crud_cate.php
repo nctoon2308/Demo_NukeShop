@@ -41,7 +41,6 @@ $post['category_image'] = $upload_info['basename'];
 $post['category_desc'] = $nv_Request->get_title('category_desc','post','');
 $post['weight'] = $nv_Request->get_title('weight','post','');
 
-$post['updatetime'] = $nv_Request->get_title('updatetime','post','');
 $post['submit'] = $nv_Request->get_title('submit','post');
 
 if (!empty($post['submit'])){
@@ -59,9 +58,9 @@ if (!empty($post['submit'])){
         if ($post['id']>0){
         //UPDATE
             $sql = "UPDATE `nv4_categories` SET `category_name`=:category_name,`category_slug`=:category_slug,
-            `category_image`=:category_image,`category_desc`=:category_desc WHERE id =".$post['id'];
+            `category_image`=:category_image,`category_desc`=:category_desc, `updated_at`=:updated_at WHERE id =".$post['id'];
             $s = $db->prepare($sql);
-
+            $s->bindValue('updated_at',NV_CURRENTTIME);
         }
         else {
             $db->sqlreset()
@@ -70,15 +69,16 @@ if (!empty($post['submit'])){
             $sql2 = $db->sql();
             $total = $db->query($sql2)->fetchColumn();
 
-            $sql = "INSERT INTO `nv4_categories`( `category_name`, `category_slug`, `category_image`, `category_desc`,`weight`) 
-                    VALUES (:category_name,:category_slug,:category_image,:category_desc,:weight)";
+            $sql = "INSERT INTO `nv4_categories`( `category_name`, `category_slug`, `category_image`, `category_desc`,`weight`,`created_at`) 
+                    VALUES (:category_name,:category_slug,:category_image,:category_desc,:weight,:created_at)";
             $s = $db->prepare($sql);
             $s->bindValue('weight', $total + 1);
+            $s->bindValue('created_at', NV_CURRENTTIME);
         }
         $s->bindParam('category_name', $post['category_name']);
         $s->bindParam('category_slug', $post['category_slug']);
         $s->bindParam('category_image', $post['category_image']);
-        $s->bindParam('category_desc', $post['category_desc']);
+        $s->bindParam('category_desc', $post['category_desc']);;
             /*$s->bindValue('weight',$total+1); */       /*$s->bindValue('addtime',NV_CURRENTTIME);
             $s->bindValue('updatetime',0);*/
             $exe = $s->execute();

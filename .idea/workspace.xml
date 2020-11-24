@@ -27,12 +27,9 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="1c4b2056-cdc8-4371-8fff-d3e2279bf285" name="Default Changelist" comment="tao csdl">
-      <change afterPath="$PROJECT_DIR$/modules/category/admin/crud_cate.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/themes/admin_default/modules/category/crud_cate.tpl" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/data/cache/modules/vi_sitemods_c853da9a0a9cc411a9eb5ebe2a7b954f.cache" beforeDir="false" afterPath="$PROJECT_DIR$/data/cache/modules/vi_sitemods_c853da9a0a9cc411a9eb5ebe2a7b954f.cache" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/modules/category/language/admin_vi.php" beforeDir="false" afterPath="$PROJECT_DIR$/modules/category/language/admin_vi.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/modules/freecontent/admin/list.php" beforeDir="false" afterPath="$PROJECT_DIR$/modules/freecontent/admin/list.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/modules/category/admin/crud_cate.php" beforeDir="false" afterPath="$PROJECT_DIR$/modules/category/admin/crud_cate.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/modules/category/admin/list.php" beforeDir="false" afterPath="$PROJECT_DIR$/modules/category/admin/list.php" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -87,8 +84,8 @@
   </component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
-      <recent name="C:\xampp\htdocs\shoplaptop\modules\category\admin" />
       <recent name="C:\xampp\htdocs\shoplaptop\themes\admin_default\modules\category" />
+      <recent name="C:\xampp\htdocs\shoplaptop\modules\category\admin" />
       <recent name="C:\xampp\htdocs\shoplaptop" />
     </key>
   </component>
@@ -114,7 +111,7 @@
       <workItem from="1606013141564" duration="48000" />
       <workItem from="1606055156700" duration="14000" />
       <workItem from="1606095502410" duration="165000" />
-      <workItem from="1606181555300" duration="6515000" />
+      <workItem from="1606181555300" duration="6826000" />
     </task>
     <task id="LOCAL-00001" summary="tạo file .gitignore">
       <created>1605670749561</created>
@@ -137,7 +134,14 @@
       <option name="project" value="LOCAL" />
       <updated>1606187235485</updated>
     </task>
-    <option name="localTasksCounter" value="4" />
+    <task id="LOCAL-00004" summary="đổi tên + di chuyển main sang crud_cate">
+      <created>1606188294736</created>
+      <option name="number" value="00004" />
+      <option name="presentableId" value="LOCAL-00004" />
+      <option name="project" value="LOCAL" />
+      <updated>1606188294736</updated>
+    </task>
+    <option name="localTasksCounter" value="5" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -172,7 +176,8 @@
     <MESSAGE value="note cdsl" />
     <MESSAGE value="tao csdl" />
     <MESSAGE value="sửa + xoá danh mục sản phẩm" />
-    <option name="LAST_COMMIT_MESSAGE" value="sửa + xoá danh mục sản phẩm" />
+    <MESSAGE value="đổi tên + di chuyển main sang crud_cate" />
+    <option name="LAST_COMMIT_MESSAGE" value="đổi tên + di chuyển main sang crud_cate" />
   </component>
   <component name="WindowStateProjectService">
     <state x="752" y="381" key="#Scopes" timestamp="1606187612565">
