@@ -31,16 +31,20 @@ if ($nv_Request->isset_request('submit', 'post') and isset($_FILES, $_FILES['cat
 }
 
 
+
 $post['id'] = $nv_Request->get_int('id','post,get','0');
 $post['category_name'] = $nv_Request->get_title('category_name','post','');
+
 
 $post['category_slug'] = $nv_Request->get_title('category_slug','post','');
 $post['category_image'] = $upload_info['basename'];
 $post['category_desc'] = $nv_Request->get_title('category_desc','post','');
+$post['weight'] = $nv_Request->get_title('weight','post','');
+
+$post['updatetime'] = $nv_Request->get_title('updatetime','post','');
 $post['submit'] = $nv_Request->get_title('submit','post');
 
 if (!empty($post['submit'])){
-
     if (empty($post['category_name'])){
         $error[] = "Chưa nhập tên";
     }
@@ -52,23 +56,39 @@ if (!empty($post['submit'])){
         $error[] = "Chưa nhập mô tả";
     }
     if (empty($error)){
+        if ($post['id']>0){
+        //UPDATE
+            $sql = "UPDATE `nv4_categories` SET `category_name`=:category_name,`category_slug`=:category_slug,
+            `category_image`=:category_image,`category_desc`=:category_desc WHERE id =".$post['id'];
+            $s = $db->prepare($sql);
 
-        $sql ="INSERT INTO `nv4_categories`( `category_name`, `category_slug`, `category_image`, `category_desc`) 
-                VALUES (:category_name,:category_slug,:category_image,:category_desc)";
-        $s = $db->prepare($sql);
-        $s->bindParam('category_name',$post['category_name']);
-        $s->bindParam('category_slug',$post['category_slug']);
-        $s->bindParam('category_image',$post['category_image']);
-        $s->bindParam('category_desc',$post['category_desc']);
-        /*$s->bindValue('addtime',NV_CURRENTTIME);
-        $s->bindValue('updatetime',0);*/
-       $exe =  $s->execute();
-
-        if ($exe){
-            $error[] = "OK";
-        }else{
-            $error[] = "Khong insert dc";
         }
+        else {
+            $db->sqlreset()
+                ->select('COUNT(*)')
+                ->from($db_config['prefix'] . '_' . 'categories');
+            $sql2 = $db->sql();
+            $total = $db->query($sql2)->fetchColumn();
+
+            $sql = "INSERT INTO `nv4_categories`( `category_name`, `category_slug`, `category_image`, `category_desc`,`weight`) 
+                    VALUES (:category_name,:category_slug,:category_image,:category_desc,:weight)";
+            $s = $db->prepare($sql);
+            $s->bindValue('weight', $total + 1);
+        }
+        $s->bindParam('category_name', $post['category_name']);
+        $s->bindParam('category_slug', $post['category_slug']);
+        $s->bindParam('category_image', $post['category_image']);
+        $s->bindParam('category_desc', $post['category_desc']);
+            /*$s->bindValue('weight',$total+1); */       /*$s->bindValue('addtime',NV_CURRENTTIME);
+            $s->bindValue('updatetime',0);*/
+            $exe = $s->execute();
+
+            if ($exe) {
+                $error[] = "OK";
+            } else {
+                $error[] = "Khong insert dc";
+            }
+
     }
 }
 

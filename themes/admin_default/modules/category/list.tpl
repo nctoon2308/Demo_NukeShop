@@ -42,6 +42,17 @@
 </div>
 
 <script type="text/javascript">
+
+    $(document).ready(function (){
+        $('.delete').click(function (){
+            if (confirm("Bạn có muốn xoá?")){
+                return true;
+            } else {
+                return false;
+            }
+        });
+    });
+
     function nv_change_weight(id) {
         var new_weight = $('.weight_'+id).val();
         $.ajax({
@@ -57,5 +68,7 @@
             }
         });
     }
+
+
 </script>
 <!-- END: main -->

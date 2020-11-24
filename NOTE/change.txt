@@ -1,3 +1,7 @@
+#24/11/2020 Đổi kiểu dữ liệu
+    ALTER TABLE `nv4_categories` CHANGE `updated_at` `updated_at` INT NULL DEFAULT '0';
+    ALTER TABLE `nv4_categories` CHANGE `updated_at` `created_at` INT NULL DEFAULT '0';
+
 #21/11/2020 Thêm cột weight cho nv4_categories
     ALTER TABLE `nv4_categories` ADD `weight` INT(11) NOT NULL DEFAULT '0' AFTER `parent_id`;
 
@@ -13,3 +17,5 @@
     RENAME TABLE `users` TO `nv4_users_shop`;
     RENAME TABLE `products` TO `nv4_products`;
     RENAME TABLE `category` TO `nv4_category`;
+
+    Tài khoản: ton@gmail.com CToon2308

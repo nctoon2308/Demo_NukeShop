@@ -4,6 +4,7 @@
 <!-- END: error -->
 <form enctype="multipart/form-data" action="{NV_BASE_ADMINURL}index.php?{NV_LANG_VARIABLE}={NV_LANG_DATA}&amp;{NV_NAME_VARIABLE}={MODULE_NAME}&amp;{NV_OP_VARIABLE}={OP}" method="post" name="{MODULE_NAME}">
     <h1>Tạo mới danh mục</h1>
+    <input type="hidden" name="id" value="{POST.id}">
         <div class="form-group">
             <label for="category_name">Tên danh mục:</label>
             <input type="text" name="category_name" class="form-control" id="category_name" value="{POST.category_name}">
