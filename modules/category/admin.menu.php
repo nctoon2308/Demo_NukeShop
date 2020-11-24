@@ -18,4 +18,6 @@ $submenu['crud_cate'] = $lang_module['crud_cate'];
 $submenu['list_product'] = $lang_module['list_product'];
 $submenu['crud_product'] = $lang_module['crud_product'];
 $submenu['order'] = $lang_module['order'];
+$submenu['crud_order'] = $lang_module['crud_order'];
+
 
