@@ -1,6 +1,12 @@
 #24/11/2020 Đổi kiểu dữ liệu
     ALTER TABLE `nv4_categories` CHANGE `updated_at` `updated_at` INT NULL DEFAULT '0';
     ALTER TABLE `nv4_categories` CHANGE `updated_at` `created_at` INT NULL DEFAULT '0';
+    RENAME TABLE `products` TO `nv4_product`;
+    ALTER TABLE `nv4_product`
+      DROP `product_publish`;
+    ALTER TABLE `nv4_product` CHANGE `updated_at` `updated_at` INT NULL DEFAULT '0';
+    ALTER TABLE `nv4_product` CHANGE `updated_at` `created_at` INT NULL DEFAULT '0';
+
 
 #21/11/2020 Thêm cột weight cho nv4_categories
     ALTER TABLE `nv4_categories` ADD `weight` INT(11) NOT NULL DEFAULT '0' AFTER `parent_id`;
