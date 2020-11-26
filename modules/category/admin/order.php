@@ -19,7 +19,7 @@ $page_title = $lang_module['config'];
 //phan trang
 $page_title = $lang_module['main'];
 
-$perpage = 5;
+$perpage = 15;
 $page = $nv_Request->get_int('page','get',1);
 
 $db->sqlreset()
@@ -44,8 +44,10 @@ if ($nv_Request->isset_request('action','post,get')){
     $checksess = $nv_Request->get_title('checksess','post,get',0);
     if($id>0 && $checksess==md5($id.NV_CHECK_SESSION)){
         $db->query("DELETE FROM `nv4_orders2` WHERE id=".$id);
+        header("Refresh");
     }
 }
+
 //------------------------------
 
 $xtpl = new XTemplate('order.tpl', NV_ROOTDIR . '/themes/' . $global_config['module_theme'] . '/modules/' . $module_file);
