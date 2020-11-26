@@ -27,3 +27,5 @@ $lang_module['list_product'] = 'Danh sách sản phẩm';
 $lang_module['crud_product'] = 'Thêm, sửa sản phẩm';
 $lang_module['order'] = 'Đơn hàng';
 $lang_module['crud_order'] = 'Thêm, sửa đơn hàng';
+$lang_module['search'] = 'Tìm kiếm';
+$lang_module['search_key'] = 'Nhập từ khoá';

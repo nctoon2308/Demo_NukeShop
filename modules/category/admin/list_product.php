@@ -44,10 +44,16 @@ $page_title = $lang_module['main'];
 $perpage = 5;
 $page = $nv_Request->get_int('page','get',1);
 
-$db->sqlreset()
+$keyword = $nv_Request->get_title('keyword','get','');
+/*$db->sqlreset()
     ->select('COUNT(*)')
-    ->from($db_config['prefix'].'_'.'product');
+    ->from($db_config['prefix'].'_'.'product');*/
+    $db->sqlreset()
+        ->select('COUNT(*)')
+        ->from($db_config['prefix'].'_'.'product')
+        ->where('product_name LIKE '.$db->quote('%'.$keyword.'%'));
 $sql = $db->sql();
+
 $total = $db->query($sql)->fetchColumn();
 
 $db->select('*')
