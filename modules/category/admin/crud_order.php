@@ -28,15 +28,27 @@ $page_title = $lang_module['main'];
 
 
 $db->sqlreset()
-    ->select('product_id')
+    ->select('*')
     ->from($db_config['prefix'].'_'.'orderdetail2')
     ->where('order_id='.$post['id']);
 $sql = $db->sql();
 $result = $db->query($sql);
+
+//SELECT product_name, category_id, product_image, nv4_orderdetail2.quantity, nv4_orderdetail2.product_price FROM nv4_product
+// LEFT JOIN nv4_orderdetail2 ON nv4_product.id = nv4_orderdetail2.product_id WHERE nv4_product.id = 4
+
 //SELECT * FROM `nv4_product` WHERE ID IN (4,5)
+
 while ($row = $result->fetch()){
+   /*echo "<pre>";
+    print_r($row);
+    echo "</pre>";*/
+    $array_row[$row['id']] = $row;
 
 }
+/*echo "<pre>";
+    print_r($array_row);
+    echo "</pre>";*/
 
 
 
@@ -70,12 +82,34 @@ $xtpl->assign('OP', $op);
 // Viết code xuất ra site vào đây
 
 if (!empty($array_row)){
+
     $i = 0;
     foreach ($array_row as $row){
 
         $row['stt'] = $i+1;
-        if (!empty($row['product_image']))
-            $row['product_image'] = NV_BASE_SITEURL.NV_UPLOADS_DIR.'/'.$module_name.'/'. $row['product_image'];
+
+        if (!empty($row['product_id'])){
+            $db->sqlreset()
+                ->select('*')
+                ->from($db_config['prefix'].'_'.'product')
+                ->where('id='.$row['product_id']);
+            $sql = $db->sql();
+            $result = $db->query($sql);
+            while ($row2 = $result->fetch()){
+                $row['product_name'] = $row2['product_name'];
+                $row['category_id'] = $row2['category_id'];
+
+                $row['product_image'] = $row2['product_image'];
+                if (!empty($row['product_image']))
+                    $row['product_image'] = NV_BASE_SITEURL.NV_UPLOADS_DIR.'/'.$module_name.'/'. $row['product_image'];
+
+                $row['product_desc'] = $row2['product_desc'];
+            }
+
+        }
+
+        /*if (!empty($row['product_image']))
+            $row['product_image'] = NV_BASE_SITEURL.NV_UPLOADS_DIR.'/'.$module_name.'/'. $row['product_image'];*/
 
         $row['url_delete'] = NV_BASE_ADMINURL . 'index.php?' . NV_LANG_VARIABLE . '=' . NV_LANG_DATA . '&amp;' . NV_NAME_VARIABLE . '=' .$module_name. '&amp;' . NV_OP_VARIABLE .'=list_product&amp;id='.$row['id'].'&action=delete&checksess='. md5($row['id'].NV_CHECK_SESSION) ;
 

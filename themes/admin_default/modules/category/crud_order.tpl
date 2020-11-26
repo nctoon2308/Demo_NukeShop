@@ -44,11 +44,11 @@
                        <th class="text-nowrap">Số thứ tự</th>
                        <th class="text-nowrap">Tên sản phẩm</th>
                        <th class="text-nowrap">Danh mục</th>
-                       <th class="text-nowrap">Trạng thái</th>
                        <th class="text-nowrap">Ảnh</th>
                        <th class="text-nowrap">Mô tả</th>
                        <th class="text-nowrap">Số lượng</th>
-                       <th class="text-nowrap">Giá</th>
+                       <th class="text-nowrap">Giá 1 sản phẩm</th>
+                       <th class="text-nowrap">Tổng giá sản phẩm</th>
                        <th class="text-nowrap text-center">Chức năng</th>
                    </tr>
                    </thead>
@@ -58,14 +58,14 @@
                        <td class="">{ROW.stt}</td>
                        <td class="">{ROW.product_name}</td>
                        <td class="">{ROW.category_id}</td>
-                       <td class="">{ROW.product_status}</td>
 
                        <td class="">
                            <img src="{ROW.product_image}" width="100px" height="100px">
                        </td>
                        <td class="">{ROW.product_desc}</td>
-                       <td class="">{ROW.product_quantity}</td>
+                       <td class="">{ROW.quantity}</td>
                        <td class="">{ROW.product_price}</td>
+                       <td class="">4</td>
                        <td class="text-center text-nowrap">
                            <a href="{ROW.url_delete}" class="btn btn-danger btn-sm delete"><i class="fa fa-edit"></i>Xoá</a>
                        </td>
@@ -73,6 +73,7 @@
                    <!-- END: loop -->
                    </tbody>
                </table>
+
 
            </div>
        </div>
