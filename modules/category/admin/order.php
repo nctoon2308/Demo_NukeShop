@@ -22,9 +22,12 @@ $page_title = $lang_module['main'];
 $perpage = 15;
 $page = $nv_Request->get_int('page','get',1);
 
+$keyword = $nv_Request->get_title('keyword','get','');
+
 $db->sqlreset()
     ->select('COUNT(*)')
-    ->from($db_config['prefix'].'_'.'orders2');
+    ->from($db_config['prefix'].'_'.'orders2')
+    ->where('customer_name LIKE '.$db->quote('%'.$keyword.'%'));
 $sql = $db->sql();
 $total = $db->query($sql)->fetchColumn();
 
