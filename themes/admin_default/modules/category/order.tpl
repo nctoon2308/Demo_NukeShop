@@ -9,6 +9,20 @@
                     <input class="form-control" type="text" value="{KEYWORD}" maxlength="64" name="keyword" placeholder="{LANG.search_key}" />
                 </div>
             </div>
+
+            <div class="col-xs-12 col-md-4">
+                <div class="form-group">
+                    <select class="form-control" name="stype">
+                        <option value=""  selected="selected" >---Tìm kiếm theo---</option>
+                        <option value="customer_name"  >Tên khách hàng</option>
+                        <option value="customer_email"  >Email</option>
+                        <option value="customer_phone"  >Số điện thoại</option>
+                        <option value="customer_address"  >Địa chỉ</option>
+                        <option value="customer_address"  >Địa chỉ</option>
+                        <option value="order_note"  >Ghi chú</option>
+                    </select>
+                </div>
+            </div>
             <div class="col-xs-12 col-md-2">
                 <div class="form-group">
                     <input class="btn btn-primary" type="submit" value="{LANG.search}" />
