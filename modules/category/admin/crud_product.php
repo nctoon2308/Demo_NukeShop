@@ -58,6 +58,7 @@ $post['product_price'] = $nv_Request->get_int('product_price','post',0);
 $post['submit'] = $nv_Request->get_title('submit','post');
 
 if (!empty($post['submit'])){
+
     if (empty($post['product_name'])){
         $error[] = "Chưa nhập tên";
     }
@@ -77,9 +78,19 @@ if (!empty($post['submit'])){
     if (empty($post['product_price'])){
         $error[] = "Chưa nhập giá";
     }
+
     if (empty($error)){
+
         if ($post['id']>0){
+
         //UPDATE
+            /*$sql = "UPDATE `nv4_product` SET `product_name`=:product_name,`product_image`=:product_image,`product_desc`=:product_desc,`product_quantity`=:product_quantity,
+`product_price`=:product_price,`updated_at`=:updated_at,`product_status`=:product_status,`category_id`=:category_id WHERE id =".$post['id'];*/
+            $sql = "UPDATE `nv4_product` SET `product_name`=:product_name,`product_image`=:product_image,`product_desc`=:product_desc,`product_quantity`=:product_quantity,
+`product_price`=:product_price,`updated_at`=:updated_at,`product_status`=:product_status,`category_id`=:category_id WHERE id =".$post['id'];
+            $sth = $db->prepare($sql);
+            $sth->bindValue('updated_at',NV_CURRENTTIME);
+
         }
         else {
             $db->sqlreset()

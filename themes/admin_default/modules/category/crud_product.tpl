@@ -7,6 +7,7 @@
         <label for="product_name">Tên sản phẩm:</label>
         <input type="text" name="product_name" class="form-control" id="product_name" value="{POST.product_name}">
     </div>
+    <input type="hidden" name="id" value="{POST.id}">
     <div class="form-group">
         <label for="product_category">Danh mục sản phẩm:</label>
         <select name="category_id" id="">
