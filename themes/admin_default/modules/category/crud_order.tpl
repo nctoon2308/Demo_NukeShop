@@ -75,6 +75,7 @@
                </table>
 
                <h2><b>Tổng giá tiền cho đơn hàng là: {TOTAL.total_price}</b></h2>
+               <h2><b>Tổng số lượng sản phẩm của đơn hàng là: {TOTAL.total_product}</b></h2>
                <!-- END: total -->
 
            </div>
@@ -82,4 +83,16 @@
         <div class="text-center"><input class="btn btn-primary" name="submit" type="submit" value="{LANG.save}" /></div>
    </div>
 </form>
+<script>
+    $(document).ready(function (){
+        $('.delete').click(function (){
+            if (confirm("Bạn có muốn xoá?")){
+                return true;
+            } else {
+                return false;
+            }
+        });
+    });
+
+</script>
 <!-- END: main -->

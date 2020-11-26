@@ -22,7 +22,6 @@ $post['id'] = $nv_Request->get_int('id','post,get','0');
 //thay doi stt
 
 
-
 //phan trang
 $page_title = $lang_module['main'];
 
@@ -59,10 +58,29 @@ while ($row = $result->fetch()){
 
 if ($nv_Request->isset_request('action','post,get')){
     $id = $nv_Request->get_int('id','post,get',0);
+    $order_id = $nv_Request->get_int('order_id','post,get',0);
     $checksess = $nv_Request->get_title('checksess','post,get',0);
-    if($id>0 && $checksess==md5($id.NV_CHECK_SESSION)){
-        $db->query("DELETE FROM `nv4_product` WHERE id=".$id);
+
+
+    if($id>0 && $checksess==md5($id.NV_CHECK_SESSION)) {
+        /* $result = $db->query("SELECT total FROM `nv4_orderdetail2` WHERE id =".$order_id);*/
+        $result = $db->query("SELECT total, quantity FROM `nv4_orderdetail2` WHERE id =" . $id);
+        $row = $result->fetch();
+        $total['total'] = $row['total'];
+        $total['quantity'] = $row['quantity'];
+
+
+        $result2 = $db->query("SELECT total_product, total_price  FROM `nv4_orders2` WHERE id =" . $order_id);
+        $row2 = $result2->fetch();
+        $total2['total_product'] = $row2['total_product'];
+        $total2['total_price'] = $row2['total_price'];
+
+        if ($db->query("DELETE FROM `nv4_orderdetail2` WHERE id=" . $id)) {
+            $db->query("UPDATE `nv4_orders2` SET `total_product`=" . ($total2['total_product'] - $total['quantity']) . ",`total_price`=" . ($total2['total_price'] - $total['total']) . " WHERE id = " . $order_id);
+            header('Location: '.NV_BASE_ADMINURL . 'index.php?' . NV_LANG_VARIABLE . '=' . NV_LANG_DATA . '&' . NV_NAME_VARIABLE . '=' .$module_name.'&' . NV_OP_VARIABLE . '=crud_order&id=' . $order_id);
+        }
     }
+
 }
 
 //------------------------------
@@ -113,7 +131,7 @@ if (!empty($array_row)){
         /*if (!empty($row['product_image']))
             $row['product_image'] = NV_BASE_SITEURL.NV_UPLOADS_DIR.'/'.$module_name.'/'. $row['product_image'];*/
 
-        $row['url_delete'] = NV_BASE_ADMINURL . 'index.php?' . NV_LANG_VARIABLE . '=' . NV_LANG_DATA . '&amp;' . NV_NAME_VARIABLE . '=' .$module_name. '&amp;' . NV_OP_VARIABLE .'=crud_order&amp;id='.$row['id'].'&prudct_id='.$row['product_id'].'&action=delete&checksess='. md5($row['product_id'].NV_CHECK_SESSION) ;
+        $row['url_delete'] = NV_BASE_ADMINURL . 'index.php?' . NV_LANG_VARIABLE . '=' . NV_LANG_DATA . '&amp;' . NV_NAME_VARIABLE . '=' .$module_name. '&amp;' . NV_OP_VARIABLE .'=crud_order&amp;id='.$row['id'].'&order_id='.$row['order_id'].'&action=delete&checksess='. md5($row['id'].NV_CHECK_SESSION) ;
 
         $xtpl->assign('ROW',$row);
         $xtpl->parse('main.total.loop');
@@ -139,6 +157,7 @@ if (!empty($row['order_id'])) {
         $customer['customer_address'] = $row3['customer_address'];
         $customer['order_status'] = $row3['order_status'];
         $customer['order_note'] = $row3['order_note'];
+        $customer['total_product'] = $row3['total_product'];
         $customer['total_price'] = number_format($row3['total_price'],0,'.',' ');
     }
 }

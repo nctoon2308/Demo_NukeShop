@@ -61,7 +61,6 @@
                 + '=list&change_weight=1&id=' + id + '&new_weight='+new_weight,
             success: function (result) {
                 if (result!='ERR'){
-
                     location.reload();
                 }
 
