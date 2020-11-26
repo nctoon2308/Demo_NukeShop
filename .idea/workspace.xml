@@ -4,10 +4,6 @@
     <expand>
       <path>
         <item name="ROOT" type="e8cecc67:BranchNodeDescriptor" />
-        <item name="LOCAL_ROOT" type="e8cecc67:BranchNodeDescriptor" />
-      </path>
-      <path>
-        <item name="ROOT" type="e8cecc67:BranchNodeDescriptor" />
         <item name="REMOTE_ROOT" type="e8cecc67:BranchNodeDescriptor" />
       </path>
       <path>
@@ -21,15 +17,14 @@
         <item name="ROOT" type="e8cecc67:BranchNodeDescriptor" />
         <item name="REMOTE_ROOT" type="e8cecc67:BranchNodeDescriptor" />
         <item name="GROUP_NODE:origin" type="e8cecc67:BranchNodeDescriptor" />
-        <item name="BRANCH:origin/develop" type="e8cecc67:BranchNodeDescriptor" />
+        <item name="BRANCH:origin/master" type="e8cecc67:BranchNodeDescriptor" />
       </path>
     </select>
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="1c4b2056-cdc8-4371-8fff-d3e2279bf285" name="Default Changelist" comment="hiển thị dữ liệu cũ khi bấm sửa danh mục">
+    <list default="true" id="1c4b2056-cdc8-4371-8fff-d3e2279bf285" name="Default Changelist" comment="hiển thị dữ liệu cũ khi bấm sửa đơn hàng (thiếu trạng thái)">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/modules/category/admin/order.php" beforeDir="false" afterPath="$PROJECT_DIR$/modules/category/admin/order.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/themes/admin_default/modules/category/crud_cate.tpl" beforeDir="false" afterPath="$PROJECT_DIR$/themes/admin_default/modules/category/crud_cate.tpl" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/themes/admin_default/modules/category/order.tpl" beforeDir="false" afterPath="$PROJECT_DIR$/themes/admin_default/modules/category/order.tpl" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -75,13 +70,14 @@
   <component name="PropertiesComponent">
     <property name="RunOnceActivity.OpenProjectViewOnStart" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$/../OOP" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/../nukeviet" />
     <property name="nodejs_package_manager_path" value="npm" />
     <property name="settings.editor.selected.configurable" value="tasks.servers" />
     <property name="vue.rearranger.settings.migration" value="true" />
   </component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
+      <recent name="C:\xampp\htdocs\shoplaptop\NOTE" />
       <recent name="C:\xampp\htdocs\shoplaptop\modules\category\admin" />
       <recent name="C:\xampp\htdocs\shoplaptop\themes\admin_default\modules\category" />
       <recent name="C:\xampp\htdocs\shoplaptop" />
@@ -89,12 +85,12 @@
   </component>
   <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
   <component name="TaskManager">
-    <task active="true" id="Default" summary="Default task">
+    <task id="Default" summary="Default task">
       <changelist id="1c4b2056-cdc8-4371-8fff-d3e2279bf285" name="Default Changelist" comment="" />
       <created>1605668016522</created>
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
-      <updated>1605668016522</updated>
+      <updated>1606380380274</updated>
       <workItem from="1605668017577" duration="746000" />
       <workItem from="1605668984481" duration="2586000" />
       <workItem from="1605671613786" duration="90000" />
@@ -110,6 +106,9 @@
       <workItem from="1606055156700" duration="14000" />
       <workItem from="1606095502410" duration="165000" />
       <workItem from="1606181555300" duration="25546000" />
+      <workItem from="1606213612759" duration="36000" />
+      <workItem from="1606353273894" duration="9735000" />
+      <workItem from="1606363120312" duration="11558000" />
     </task>
     <task id="LOCAL-00001" summary="tạo file .gitignore">
       <created>1605670749561</created>
@@ -244,7 +243,107 @@
       <option name="project" value="LOCAL" />
       <updated>1606212126555</updated>
     </task>
-    <option name="localTasksCounter" value="20" />
+    <task id="LOCAL-00020" summary="thêm cột total">
+      <created>1606356858656</created>
+      <option name="number" value="00020" />
+      <option name="presentableId" value="LOCAL-00020" />
+      <option name="project" value="LOCAL" />
+      <updated>1606356858656</updated>
+    </task>
+    <task id="LOCAL-00021" summary="hiển thị sản phẩm trong đơn hàng">
+      <created>1606356886635</created>
+      <option name="number" value="00021" />
+      <option name="presentableId" value="LOCAL-00021" />
+      <option name="project" value="LOCAL" />
+      <updated>1606356886635</updated>
+    </task>
+    <task id="LOCAL-00022" summary="thêm sản phẩm">
+      <created>1606356928756</created>
+      <option name="number" value="00022" />
+      <option name="presentableId" value="LOCAL-00022" />
+      <option name="project" value="LOCAL" />
+      <updated>1606356928756</updated>
+    </task>
+    <task id="LOCAL-00023" summary="hiển thị dữ liệu cũ khi bấm sửa đơn hàng (thiếu trạng thái)">
+      <created>1606360294257</created>
+      <option name="number" value="00023" />
+      <option name="presentableId" value="LOCAL-00023" />
+      <option name="project" value="LOCAL" />
+      <updated>1606360294257</updated>
+    </task>
+    <task id="LOCAL-00024" summary="xoá menu thêm, sửa đơn hàng">
+      <created>1606361583368</created>
+      <option name="number" value="00024" />
+      <option name="presentableId" value="LOCAL-00024" />
+      <option name="project" value="LOCAL" />
+      <updated>1606361583368</updated>
+    </task>
+    <task id="LOCAL-00025" summary="sửa url_delete">
+      <created>1606361622337</created>
+      <option name="number" value="00025" />
+      <option name="presentableId" value="LOCAL-00025" />
+      <option name="project" value="LOCAL" />
+      <updated>1606361622337</updated>
+    </task>
+    <task active="true" id="LOCAL-00026" summary="thêm phần sửa sản phẩm">
+      <changelist id="1c4b2056-cdc8-4371-8fff-d3e2279bf285" name="Default Changelist" comment="hiển thị dữ liệu cũ khi bấm sửa đơn hàng (thiếu trạng thái)" />
+      <created>1606363573758</created>
+      <option name="number" value="00026" />
+      <option name="presentableId" value="LOCAL-00026" />
+      <option name="project" value="LOCAL" />
+      <updated>1606380380274</updated>
+      <workItem from="1606380380459" duration="1146000" />
+    </task>
+    <task id="LOCAL-00027" summary="chuyển hướng trang khi xoá sản phẩm trong đơn hàng">
+      <created>1606373378173</created>
+      <option name="number" value="00027" />
+      <option name="presentableId" value="LOCAL-00027" />
+      <option name="project" value="LOCAL" />
+      <updated>1606373378173</updated>
+    </task>
+    <task id="LOCAL-00028" summary="hiển thị trạng thái đơn hàng trong mục xem đơn hàng">
+      <created>1606374018754</created>
+      <option name="number" value="00028" />
+      <option name="presentableId" value="LOCAL-00028" />
+      <option name="project" value="LOCAL" />
+      <updated>1606374018754</updated>
+    </task>
+    <task id="LOCAL-00029" summary="xoá đơn hàng">
+      <created>1606374631837</created>
+      <option name="number" value="00029" />
+      <option name="presentableId" value="LOCAL-00029" />
+      <option name="project" value="LOCAL" />
+      <updated>1606374631837</updated>
+    </task>
+    <task id="LOCAL-00030" summary="thêm csdl">
+      <created>1606374865448</created>
+      <option name="number" value="00030" />
+      <option name="presentableId" value="LOCAL-00030" />
+      <option name="project" value="LOCAL" />
+      <updated>1606374865448</updated>
+    </task>
+    <task id="LOCAL-00031" summary="thêm mục tìm kiếm ở list product">
+      <created>1606378185882</created>
+      <option name="number" value="00031" />
+      <option name="presentableId" value="LOCAL-00031" />
+      <option name="project" value="LOCAL" />
+      <updated>1606378185882</updated>
+    </task>
+    <task id="LOCAL-00032" summary="thêm mục tìm kiếm ở list category">
+      <created>1606378665963</created>
+      <option name="number" value="00032" />
+      <option name="presentableId" value="LOCAL-00032" />
+      <option name="project" value="LOCAL" />
+      <updated>1606378665963</updated>
+    </task>
+    <task id="LOCAL-00033" summary="thêm mục tìm kiếm ở list order">
+      <created>1606380354268</created>
+      <option name="number" value="00033" />
+      <option name="presentableId" value="LOCAL-00033" />
+      <option name="project" value="LOCAL" />
+      <updated>1606380354268</updated>
+    </task>
+    <option name="localTasksCounter" value="34" />
     <servers>
       <GitHub url="https://github.com">
         <option name="repoAuthor" value="nctoon2308" />
@@ -266,7 +365,7 @@
                   <entry key="branch">
                     <value>
                       <list>
-                        <option value="origin/develop" />
+                        <option value="origin/master" />
                       </list>
                     </value>
                   </entry>
@@ -280,15 +379,7 @@
     <option name="oldMeFiltersMigrated" value="true" />
   </component>
   <component name="VcsManagerConfiguration">
-    <MESSAGE value="tạo file .gitignore" />
-    <MESSAGE value="note cdsl" />
-    <MESSAGE value="tao csdl" />
-    <MESSAGE value="sửa + xoá danh mục sản phẩm" />
-    <MESSAGE value="đổi tên + di chuyển main sang crud_cate" />
-    <MESSAGE value="thêm updated_at + created_at" />
-    <MESSAGE value="thêm đổi kiểu + tên trong bảng nv4_products" />
     <MESSAGE value="thêm weight cho bảng product" />
-    <MESSAGE value="thêm sản phẩm" />
     <MESSAGE value="show list sản phẩm" />
     <MESSAGE value="sắp xếp weight" />
     <MESSAGE value="hiển thị trạng thái hàng hoá" />
@@ -299,7 +390,21 @@
     <MESSAGE value="thêm mục order" />
     <MESSAGE value="đổi tên bảng order và orderdetail" />
     <MESSAGE value="Thêm crud_order" />
-    <option name="LAST_COMMIT_MESSAGE" value="Thêm crud_order" />
+    <MESSAGE value="thêm cột total" />
+    <MESSAGE value="hiển thị sản phẩm trong đơn hàng" />
+    <MESSAGE value="thêm sản phẩm" />
+    <MESSAGE value="hiển thị dữ liệu cũ khi bấm sửa đơn hàng (thiếu trạng thái)" />
+    <MESSAGE value="xoá menu thêm, sửa đơn hàng" />
+    <MESSAGE value="sửa url_delete" />
+    <MESSAGE value="thêm phần sửa sản phẩm" />
+    <MESSAGE value="chuyển hướng trang khi xoá sản phẩm trong đơn hàng" />
+    <MESSAGE value="hiển thị trạng thái đơn hàng trong mục xem đơn hàng" />
+    <MESSAGE value="xoá đơn hàng" />
+    <MESSAGE value="thêm csdl" />
+    <MESSAGE value="thêm mục tìm kiếm ở list product" />
+    <MESSAGE value="thêm mục tìm kiếm ở list category" />
+    <MESSAGE value="thêm mục tìm kiếm ở list order" />
+    <option name="LAST_COMMIT_MESSAGE" value="thêm mục tìm kiếm ở list order" />
   </component>
   <component name="WindowStateProjectService">
     <state x="741" y="273" key="#HTTP_Proxy" timestamp="1606205248676">
@@ -314,10 +419,10 @@
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
     <state x="718" y="329" key="#com.intellij.fileTypes.FileTypeChooser/0.0.1920.1040@0.0.1920.1040" timestamp="1605670679808" />
-    <state x="740" y="277" key="FileChooserDialogImpl" timestamp="1606211883778">
+    <state x="740" y="277" key="FileChooserDialogImpl" timestamp="1606376882717">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state x="740" y="277" key="FileChooserDialogImpl/0.0.1920.1040@0.0.1920.1040" timestamp="1606211883778" />
+    <state x="740" y="277" key="FileChooserDialogImpl/0.0.1920.1040@0.0.1920.1040" timestamp="1606376882717" />
     <state x="837" y="422" key="Github.ShareDialog" timestamp="1605668728026">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
@@ -326,18 +431,22 @@
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
     <state x="463" y="166" key="SettingsEditor/0.0.1920.1040@0.0.1920.1040" timestamp="1606205437543" />
-    <state x="552" y="255" key="Vcs.Push.Dialog.v2" timestamp="1606212203624">
+    <state x="552" y="255" key="Vcs.Push.Dialog.v2" timestamp="1606378676723">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state x="552" y="255" key="Vcs.Push.Dialog.v2/0.0.1920.1040@0.0.1920.1040" timestamp="1606212203624" />
+    <state x="552" y="255" key="Vcs.Push.Dialog.v2/0.0.1920.1040@0.0.1920.1040" timestamp="1606378676723" />
+    <state x="573" y="133" key="com.intellij.openapi.editor.actions.MultiplePasteAction$ClipboardContentChooser" timestamp="1606378294277">
+      <screen x="0" y="0" width="1920" height="1040" />
+    </state>
+    <state x="573" y="133" key="com.intellij.openapi.editor.actions.MultiplePasteAction$ClipboardContentChooser/0.0.1920.1040@0.0.1920.1040" timestamp="1606378294277" />
     <state x="781" y="436" key="com.intellij.openapi.vcs.update.UpdateOrStatusOptionsDialogupdate-v2" timestamp="1605671220110">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
     <state x="781" y="436" key="com.intellij.openapi.vcs.update.UpdateOrStatusOptionsDialogupdate-v2/0.0.1920.1040@0.0.1920.1040" timestamp="1605671220110" />
-    <state x="669" y="271" width="581" height="498" key="find.popup" timestamp="1605857351779">
+    <state x="669" y="271" width="581" height="498" key="find.popup" timestamp="1606378298836">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state x="669" y="271" width="581" height="498" key="find.popup/0.0.1920.1040@0.0.1920.1040" timestamp="1605857351779" />
+    <state x="669" y="271" width="581" height="498" key="find.popup/0.0.1920.1040@0.0.1920.1040" timestamp="1606378298836" />
     <state x="623" y="230" width="672" height="678" key="search.everywhere.popup" timestamp="1606205011284">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
