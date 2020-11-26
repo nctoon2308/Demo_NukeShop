@@ -9,12 +9,13 @@
                     <input class="form-control" type="text" value="{KEYWORD}" maxlength="64" name="keyword" placeholder="{LANG.search_key}" />
                 </div>
             </div>
-            <div class="col-xs-12 col-md-3">
+            <div class="col-xs-12 col-md-2">
                 <div class="form-group">
                     <input class="btn btn-primary" type="submit" value="{LANG.search}" />
                 </div>
             </div>
         </div>
+
     </form>
 </div>
 

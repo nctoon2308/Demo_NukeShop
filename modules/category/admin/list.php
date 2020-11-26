@@ -44,9 +44,11 @@ $page_title = $lang_module['main'];
 $perpage = 5;
 $page = $nv_Request->get_int('page','get',1);
 
+$keyword = $nv_Request->get_title('keyword','get','');
 $db->sqlreset()
     ->select('COUNT(*)')
-    ->from($db_config['prefix'].'_'.'categories');
+    ->from($db_config['prefix'].'_'.'categories')
+    ->where('category_name LIKE '.$db->quote('%'.$keyword.'%'));
 $sql = $db->sql();
 $total = $db->query($sql)->fetchColumn();
 
