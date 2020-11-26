@@ -60,7 +60,9 @@ $result = $db->query($sql);
 while ($row = $result->fetch()){
     $array_row[$row['id']] = $row;
 }
-
+    /*echo "<pre>";
+    print_r($array_row);
+    echo "</pre>";*/
 
 
 //------------------------------
