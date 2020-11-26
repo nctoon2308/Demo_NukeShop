@@ -2,19 +2,20 @@
 <!-- BEGIN: error -->
 <div class="alert alert-warning" role="alert">{ERROR}</div>
 <!-- END: error -->
+<!-- BEGIN: total -->
 <form  enctype="multipart/form-data" action="{NV_BASE_ADMINURL}index.php?{NV_LANG_VARIABLE}={NV_LANG_DATA}&amp;{NV_NAME_VARIABLE}={MODULE_NAME}&amp;{NV_OP_VARIABLE}={OP}" method="post" name="{MODULE_NAME}">
    <div class="form-group">
        <div class="form-group">
            <label for="customer_name">Tên khách hàng:</label>
-           <input type="text" name="customer_name" class="form-control" id="customer_name" value="">
+           <input type="text" name="customer_name" class="form-control" id="customer_name" value="{TOTAL.customer_name}">
        </div>
        <div class="form-group">
            <label for="customer_email">Email:</label>
-           <input type="text" name="customer_email" class="form-control" id="customer_email" value="">
+           <input type="text" name="customer_email" class="form-control" id="customer_email" value="{TOTAL.customer_email}">
        </div>
        <div class="form-group">
            <label for="customer_phone">Số điện thoại:</label>
-           <input type="text" name="customer_phone" class="form-control" id="customer_phone" value="">
+           <input type="text" name="customer_phone" class="form-control" id="customer_phone" value="{TOTAL.customer_phone}">
        </div>
        <div class="form-group">
            <label for="order_status">Trạng thái đơn hàng:</label>
@@ -29,11 +30,11 @@
        </div>
        <div class="form-group">
            <label for="customer_address">Địa chỉ:</label>
-           <textarea name="customer_address" class="form-control" rows="3" id="customer_address"></textarea>
+           <textarea name="customer_address" class="form-control" rows="3" id="customer_address">{TOTAL.customer_address}</textarea>
        </div>
        <div class="form-group">
            <label for="order_note">Ghi chú:</label>
-           <textarea name="order_note" class="form-control" rows="3" id="order_note"></textarea>
+           <textarea name="order_note" class="form-control" rows="3" id="order_note">{TOTAL.order_note}</textarea>
        </div>
 
        <div class="form-group">
@@ -43,7 +44,6 @@
                    <tr class="text-center">
                        <th class="text-nowrap">Số thứ tự</th>
                        <th class="text-nowrap">Tên sản phẩm</th>
-                       <th class="text-nowrap">Danh mục</th>
                        <th class="text-nowrap">Ảnh</th>
                        <th class="text-nowrap">Mô tả</th>
                        <th class="text-nowrap">Số lượng</th>
@@ -57,7 +57,6 @@
                    <tr class="text-center">
                        <td class="">{ROW.stt}</td>
                        <td class="">{ROW.product_name}</td>
-                       <td class="">{ROW.category_id}</td>
 
                        <td class="">
                            <img src="{ROW.product_image}" width="100px" height="100px">
@@ -65,15 +64,18 @@
                        <td class="">{ROW.product_desc}</td>
                        <td class="">{ROW.quantity}</td>
                        <td class="">{ROW.product_price}</td>
-                       <td class="">4</td>
+                       <td class="">{ROW.total}</td>
                        <td class="text-center text-nowrap">
                            <a href="{ROW.url_delete}" class="btn btn-danger btn-sm delete"><i class="fa fa-edit"></i>Xoá</a>
                        </td>
                    </tr>
                    <!-- END: loop -->
                    </tbody>
+
                </table>
 
+               <h2><b>Tổng giá tiền cho đơn hàng là: {TOTAL.total_price}</b></h2>
+               <!-- END: total -->
 
            </div>
        </div>

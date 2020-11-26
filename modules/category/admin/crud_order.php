@@ -40,7 +40,7 @@ $result = $db->query($sql);
 //SELECT * FROM `nv4_product` WHERE ID IN (4,5)
 
 while ($row = $result->fetch()){
-   /*echo "<pre>";
+ /*  echo "<pre>";
     print_r($row);
     echo "</pre>";*/
     $array_row[$row['id']] = $row;
@@ -105,8 +105,10 @@ if (!empty($array_row)){
 
                 $row['product_desc'] = $row2['product_desc'];
             }
-
         }
+
+
+
 
         /*if (!empty($row['product_image']))
             $row['product_image'] = NV_BASE_SITEURL.NV_UPLOADS_DIR.'/'.$module_name.'/'. $row['product_image'];*/
@@ -114,11 +116,37 @@ if (!empty($array_row)){
         $row['url_delete'] = NV_BASE_ADMINURL . 'index.php?' . NV_LANG_VARIABLE . '=' . NV_LANG_DATA . '&amp;' . NV_NAME_VARIABLE . '=' .$module_name. '&amp;' . NV_OP_VARIABLE .'=list_product&amp;id='.$row['id'].'&action=delete&checksess='. md5($row['id'].NV_CHECK_SESSION) ;
 
         $xtpl->assign('ROW',$row);
-        $xtpl->parse('main.loop');
+        $xtpl->parse('main.total.loop');
         $i++;
 
     }
 }
+
+if (!empty($row['order_id'])) {
+    $i=0;
+    $db->sqlreset()
+        ->select('*')
+        ->from($db_config['prefix'] . '_' . 'orders2')
+        ->where('id=' . $row['order_id']);
+    $sql = $db->sql();
+    $result = $db->query($sql);
+    /*$row3 = $result->fetch();
+    $customer['total_price'] = number_format($row3['total_price'],0,'.',' ');*/
+    while ($row3 = $result->fetch()){
+        $customer['customer_name'] = $row3['customer_name'];
+        $customer['customer_email'] = $row3['customer_email'];
+        $customer['customer_phone'] = $row3['customer_phone'];
+        $customer['customer_address'] = $row3['customer_address'];
+        $customer['order_status'] = $row3['order_status'];
+        $customer['order_note'] = $row3['order_note'];
+        $customer['total_price'] = number_format($row3['total_price'],0,'.',' ');
+    }
+}
+
+
+
+$xtpl->assign('TOTAL',$customer);
+$xtpl->parse('main.total');
 
 
 
