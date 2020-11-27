@@ -1,5 +1,9 @@
 #26/11/2020
     Test fork
 
+    Sắp xếp list
+    <th class="text-center"><em class="fa fa-sort">&nbsp;</em>
+    <a href="/nukeviet1/admin/index.php?nv=shops&op=items&per_page=50&catid=0&stype=-&q=&checkss=&ordername=hitstotal&order=asc&page=1">Lượt xem</a></th>
+
 #24/11/2020
-    Lấy ra được id của các sản phẩm trong danh mục, nhưng chưa biết cách select nó ra vì id ở dạng mảng.
+    Lấy ra được id của các sản phẩm trong danh mục, nhưng chưa biết cách select nó ra vì id ở dạng mảng. //DONE

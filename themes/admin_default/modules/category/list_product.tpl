@@ -1,4 +1,5 @@
 <!-- BEGIN: main -->
+<!-- BEGIN: keyword -->
 <div class="well">
     <form action="index.php" method="get">
         <input type="hidden" name="{NV_NAME_VARIABLE}" value="{MODULE_NAME}" />
@@ -7,6 +8,28 @@
             <div class="col-xs-12 col-md-6">
                 <div class="form-group">
                     <input class="form-control" type="text" value="{KEYWORD}" maxlength="64" name="keyword" placeholder="{LANG.search_key}" />
+                </div>
+            </div>
+            <div class="col-xs-12 col-md-4">
+                <div class="form-group">
+                    <select class="form-control" name="order_by">
+                        <option value=""  selected="selected" >---Sắp xếp theo---</option>
+                        <option value="weight"  >Số thứ tự</option>
+                        <option value="product_name"  >Tên sản phẩm</option>
+                        <option value="product_desc"  >Mô tả sản phẩm</option>
+                        <option value="product_quantity"  >Số lượng sản phẩm</option>
+                        <option value="product_quantity"  >Số lượng sản phẩm</option>
+                        <option value="product_price"  >Giá sản phẩm</option>
+                    </select>
+                </div>
+            </div>
+            <div class="col-xs-12 col-md-4">
+                <div class="form-group">
+                    <select class="form-control" name="stype">
+                        <option value=""  selected="selected" >---Kiểu sắp xếp---</option>
+                        <option value="ASC"  >Tăng dần</option>
+                        <option value="DESC"  >Giảm dần</option>
+                    </select>
                 </div>
             </div>
             <div class="col-xs-12 col-md-2">
@@ -18,7 +41,7 @@
 
     </form>
 </div>
-
+<!-- END: keyword -->
 <div class="table-responsive">
     <table class="table table-striped table-bordered table-hover">
         <thead>
