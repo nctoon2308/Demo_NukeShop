@@ -1,5 +1,5 @@
 <!-- BEGIN: main -->
-
+<!-- BEGIN: keyword -->
 <div class="well">
     <form action="" method="get">
         <input type="hidden" name="{NV_NAME_VARIABLE}" value="{MODULE_NAME}" />
@@ -11,7 +11,7 @@
                 </div>
             </div>
 
-
+            <!-- END: keyword -->
             <div class="col-xs-12 col-md-4">
                 <div class="form-group">
                     <select class="form-control" name="order_by">

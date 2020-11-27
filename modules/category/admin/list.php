@@ -108,7 +108,8 @@ $xtpl->assign('NV_OP_VARIABLE', NV_OP_VARIABLE);
 $xtpl->assign('MODULE_NAME', $module_name);
 $xtpl->assign('OP', $op);
 
-
+$xtpl->assign('KEYWORD',$keyword);
+$xtpl->parse('main.keyword');
 //-------------------------------
 // Viết code xuất ra site vào đây
 
@@ -142,6 +143,11 @@ if (!empty($array_row)){
 
 
 $base_url =NV_BASE_ADMINURL . 'index.php?' . NV_LANG_VARIABLE . '=' . NV_LANG_DATA . '&amp;' . NV_NAME_VARIABLE . '=' .$module_name.'&amp;' . NV_OP_VARIABLE . '=list';
+
+if ($keyword != ''){
+    $base_url .= '&keyword='.$keyword;
+}
+
 $generate_page=nv_generate_page($base_url,$total,$perpage,$page);
 $xtpl->assign('GENERATE_PAGE',$generate_page);
 $xtpl->parse('main.GENERATE_PAGE');
