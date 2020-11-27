@@ -23,14 +23,14 @@ $perpage = 15;
 $page = $nv_Request->get_int('page','get',1);
 
 $keyword = $nv_Request->get_title('keyword','get','');
-$type = $nv_Request->get_title('stype','get','');
+$stype = $nv_Request->get_title('stype','get','');
 
-if (!empty($type)) {
+if (!empty($stype)) {
 
     $db->sqlreset()
         ->select('COUNT(*)')
         ->from($db_config['prefix'] . '_' . 'orders2')
-        ->where($type.' LIKE ' . $db->quote('%' . $keyword . '%'));
+        ->where($stype.' LIKE ' . $db->quote('%' . $keyword . '%'));
     $sql = $db->sql();
     $total = $db->query($sql)->fetchColumn();
 } else

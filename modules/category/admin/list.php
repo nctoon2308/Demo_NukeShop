@@ -44,20 +44,38 @@ $page_title = $lang_module['main'];
 $perpage = 5;
 $page = $nv_Request->get_int('page','get',1);
 
+
+//sắp xếp + tìm kiếm
 $keyword = $nv_Request->get_title('keyword','get','');
+$order_by = $nv_Request->get_title('order_by','get','');
+$stype = $nv_Request->get_title('stype','get','');
+
 $db->sqlreset()
     ->select('COUNT(*)')
     ->from($db_config['prefix'].'_'.'categories')
     ->where('category_name LIKE '.$db->quote('%'.$keyword.'%'));
 $sql = $db->sql();
+
 $total = $db->query($sql)->fetchColumn();
 
-$db->select('*')
-    ->order('weight ASC')
-    ->limit($perpage)
-    ->offset(($page-1)*$perpage);
+
+
+if (!empty($order_by)){
+    $db->select('*')
+        ->order($order_by.' '.$stype)
+        ->limit($perpage)
+        ->offset(($page-1)*$perpage);
+}else{
+    $db->select('*')
+        /*->order($order_by.' '.$stype)*/
+        ->order('weight ASC')
+        ->limit($perpage)
+        ->offset(($page-1)*$perpage);
+}
+
 
 $sql = $db->sql();
+/*die($sql);*/
 $result = $db->query($sql);
 while ($row = $result->fetch()){
     $array_row[$row['id']] = $row;
@@ -111,6 +129,9 @@ if (!empty($array_row)){
 
         $row['url_delete'] = NV_BASE_ADMINURL . 'index.php?' . NV_LANG_VARIABLE . '=' . NV_LANG_DATA . '&amp;' . NV_NAME_VARIABLE . '=' .$module_name. '&amp;' . NV_OP_VARIABLE .'=list&amp;id='.$row['id'].'&action=delete&checksess='. md5($row['id'].NV_CHECK_SESSION) ;
         $row['url_edit'] = NV_BASE_ADMINURL . 'index.php?' . NV_LANG_VARIABLE . '=' . NV_LANG_DATA . '&amp;' . NV_NAME_VARIABLE . '=' .$module_name.'&amp;' . NV_OP_VARIABLE . '=crud_cate&amp;id=' . $row['id'];
+
+
+
 
         $xtpl->assign('ROW',$row);
         $xtpl->parse('main.loop');
