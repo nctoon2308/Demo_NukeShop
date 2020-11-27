@@ -15,26 +15,6 @@ if (!defined('NV_IS_FILE_ADMIN')) {
 $page_title = $lang_module['main'];
 
 
-//change weight
-//thay doi stt
-if ($nv_Request->isset_request('change_weight', 'post,get')) {
-    $id = $nv_Request->get_int('id', 'post,get', 0);
-    $new_weight = $nv_Request->get_int('new_weight', 'post,get', 0);
-    if ($id > 0 && $new_weight > 0) {
-        $sql = "SELECT id, weight FROM `nv4_product` WHERE id != " . $id;
-        $result = $db->query($sql);
-        $weight = 0;
-        while ($row = $result->fetch()) {
-            ++$weight;
-            if ($weight == $new_weight) {
-                ++$weight;
-            }
-            $exe = $db->query("UPDATE `nv4_product` SET weight = " . $weight . " WHERE id = " . $row['id']);
-        }
-
-        $exe = $db->query("UPDATE `nv4_product` SET weight = " . $new_weight . " WHERE id = " . $id);
-    }
-}
 
 
 //phan trang
@@ -114,11 +94,7 @@ $xtpl->parse('main.keyword');
 if (!empty($array_row)) {
     $i = ($page - 1) * $perpage;
     foreach ($array_row as $row) {
-        for ($j = 1; $j <= $total; $j++) {
-            $xtpl->assign('J', $j);
-            $xtpl->assign('J_SELECT', $j == $row['weight'] ? 'selected = "selected"' : '');
-            $xtpl->parse('main.loop.weight');
-        }
+
         $row['stt'] = $i + 1;
         if (!empty($row['product_image']))
             $row['product_image'] = NV_BASE_SITEURL . NV_UPLOADS_DIR . '/' . $module_name . '/' . $row['product_image'];

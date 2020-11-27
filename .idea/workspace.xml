@@ -24,7 +24,6 @@
   <component name="ChangeListManager">
     <list default="true" id="1c4b2056-cdc8-4371-8fff-d3e2279bf285" name="Default Changelist" comment="hiển thị dữ liệu cũ khi bấm sửa đơn hàng (thiếu trạng thái)">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/NOTE/những vấn đề cần làm tiếp" beforeDir="false" afterPath="$PROJECT_DIR$/NOTE/những vấn đề cần làm tiếp" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/modules/category/admin/list.php" beforeDir="false" afterPath="$PROJECT_DIR$/modules/category/admin/list.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/modules/category/admin/list_product.php" beforeDir="false" afterPath="$PROJECT_DIR$/modules/category/admin/list_product.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/themes/admin_default/modules/category/list.tpl" beforeDir="false" afterPath="$PROJECT_DIR$/themes/admin_default/modules/category/list.tpl" afterDir="false" />
@@ -113,7 +112,7 @@
       <workItem from="1606353273894" duration="9735000" />
       <workItem from="1606363120312" duration="11558000" />
       <workItem from="1606382319704" duration="2677000" />
-      <workItem from="1606440910703" duration="5281000" />
+      <workItem from="1606440910703" duration="6694000" />
     </task>
     <task id="LOCAL-00001" summary="tạo file .gitignore">
       <created>1605670749561</created>
@@ -376,7 +375,14 @@
       <option name="project" value="LOCAL" />
       <updated>1606444864931</updated>
     </task>
-    <option name="localTasksCounter" value="38" />
+    <task id="LOCAL-00038" summary="search list product">
+      <created>1606449749896</created>
+      <option name="number" value="00038" />
+      <option name="presentableId" value="LOCAL-00038" />
+      <option name="project" value="LOCAL" />
+      <updated>1606449749896</updated>
+    </task>
+    <option name="localTasksCounter" value="39" />
     <servers>
       <GitHub url="https://github.com">
         <option name="repoAuthor" value="nctoon2308" />
@@ -412,7 +418,6 @@
     <option name="oldMeFiltersMigrated" value="true" />
   </component>
   <component name="VcsManagerConfiguration">
-    <MESSAGE value="hiển thị dữ liệu cũ khi bấm sửa danh mục" />
     <MESSAGE value="sửa nhẹ" />
     <MESSAGE value="hiển thị dữ liệu cũ khi bấm sửa" />
     <MESSAGE value="hiện thị danh mục sản phẩm" />
@@ -437,7 +442,8 @@
     <MESSAGE value="upload ảnh cho bạn Tuân Mè" />
     <MESSAGE value="Sắp xếp kết quả tìm kiếm" />
     <MESSAGE value="hiện thị keyword khi sang trang khác" />
-    <option name="LAST_COMMIT_MESSAGE" value="hiện thị keyword khi sang trang khác" />
+    <MESSAGE value="search list product" />
+    <option name="LAST_COMMIT_MESSAGE" value="search list product" />
   </component>
   <component name="WindowStateProjectService">
     <state x="741" y="273" key="#HTTP_Proxy" timestamp="1606205248676">
@@ -480,10 +486,10 @@
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
     <state x="540" y="177" key="editAsTableFormatDialogDimension/0.0.1920.1040@0.0.1920.1040" timestamp="1606382097216" />
-    <state x="669" y="271" width="581" height="498" key="find.popup" timestamp="1606378298836">
+    <state x="669" y="271" width="581" height="498" key="find.popup" timestamp="1606450702251">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state x="669" y="271" width="581" height="498" key="find.popup/0.0.1920.1040@0.0.1920.1040" timestamp="1606378298836" />
+    <state x="669" y="271" width="581" height="498" key="find.popup/0.0.1920.1040@0.0.1920.1040" timestamp="1606450702251" />
     <state x="616" y="240" key="run.anything.popup" timestamp="1606382308958">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>

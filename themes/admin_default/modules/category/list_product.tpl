@@ -60,13 +60,7 @@
         <tbody>
         <!-- BEGIN: loop -->
         <tr class="text-center">
-            <td class="">
-                <select onchange="nv_change_weight({ROW.id})" name="weight" class="form-control weight_{ROW.id}" id="">
-                    <!-- BEGIN: weight -->
-                    <option value="{J}" {J_SELECT}>{J}</option>
-                    <!-- END: weight -->
-                </select>
-            </td>
+            <td class="">{ROW.stt}</td>
             <td class="">{ROW.product_name}</td>
             <td class="">{ROW.category_id}</td>
             <td class="">{ROW.product_status}</td>
@@ -101,22 +95,6 @@
             }
         });
     });
-
-    function nv_change_weight(id) {
-        var new_weight = $('.weight_'+id).val();
-        $.ajax({
-            url: script_name + '?' + nv_name_variable + '=' + nv_module_name
-                + '&' + nv_fc_variable
-                + '=list_product&change_weight=1&id=' + id + '&new_weight='+new_weight,
-            success: function (result) {
-                if (result!='ERR'){
-
-                    location.reload();
-                }
-
-            }
-        });
-    }
 
 
 </script>

@@ -13,7 +13,7 @@ if (!defined('NV_IS_FILE_ADMIN')) {
 }
 
 $page_title = $lang_module['main'];
-
+$error = [];
 
 //change weight
 //thay doi stt
@@ -87,9 +87,21 @@ while ($row = $result->fetch()) {
 if ($nv_Request->isset_request('action', 'post,get')) {
     $id = $nv_Request->get_int('id', 'post,get', 0);
     $checksess = $nv_Request->get_title('checksess', 'post,get', 0);
-    if ($id > 0 && $checksess == md5($id . NV_CHECK_SESSION)) {
-        $db->query("DELETE FROM `nv4_categories` WHERE id=" . $id);
-    }
+    $db->sqlreset()
+        ->select('COUNT(*)')
+        ->from($db_config['prefix'] . '_' . 'product')
+        ->where('category_id = '.$id);
+    $sql = $db->sql();
+    $total = $db->query($sql)->fetchColumn();
+   if ($total>0){
+       $error[] = "Danh mục này đang chứa sản phẩm, không thể xoá!!";
+       /*header('Location: '.NV_BASE_ADMINURL . 'index.php?' . NV_LANG_VARIABLE . '=' . NV_LANG_DATA . '&' . NV_NAME_VARIABLE . '=' .$module_name.'&' . NV_OP_VARIABLE . '=list');*/
+   }else{
+       if ($id > 0 && $checksess == md5($id . NV_CHECK_SESSION)) {
+           $db->query("DELETE FROM `nv4_categories` WHERE id=" . $id);
+       }
+   }
+
 }
 
 //------------------------------
@@ -103,6 +115,10 @@ $xtpl->assign('NV_NAME_VARIABLE', NV_NAME_VARIABLE);
 $xtpl->assign('NV_OP_VARIABLE', NV_OP_VARIABLE);
 $xtpl->assign('MODULE_NAME', $module_name);
 $xtpl->assign('OP', $op);
+$xtpl->assign('ERROR',implode('<br>',$error));
+if (!empty($error)){
+    $xtpl->parse('main.error');
+}
 
 $xtpl->assign('KEYWORD', $keyword);
 $xtpl->parse('main.keyword');
@@ -112,11 +128,11 @@ $xtpl->parse('main.keyword');
 if (!empty($array_row)) {
     $i = ($page - 1) * $perpage;
     foreach ($array_row as $row) {
-        for ($j = 1; $j <= $total; $j++) {
+       /* for ($j = 1; $j <= $total; $j++) {
             $xtpl->assign('J', $j);
             $xtpl->assign('J_SELECT', $j == $row['weight'] ? 'selected = "selected"' : '');
             $xtpl->parse('main.loop.weight');
-        }
+        }*/
         $row['stt'] = $i + 1;
         if (!empty($row['category_image']))
             $row['category_image'] = NV_BASE_SITEURL . NV_UPLOADS_DIR . '/' . $module_name . '/' . $row['category_image'];
