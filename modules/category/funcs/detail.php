@@ -15,7 +15,48 @@ if (!defined('NV_IS_MOD_CATEGORY')) {
 $page_title = $module_info['site_title'];
 $key_words = $module_info['keywords'];
 
-$array_data = [];
+$array_data = []; 
+
+
+
+//phan trang
+$page_title = $lang_module['main'];
+
+$perpage = 20;
+$page = $nv_Request->get_int('page', 'get', 1);
+
+//sắp xếp + tìm kiếm
+$keyword = $nv_Request->get_title('keyword', 'get', '');
+$order_by = $nv_Request->get_title('order_by', 'get', '');
+$stype = $nv_Request->get_title('stype', 'get', '');
+
+$db->sqlreset()
+    ->select('COUNT(*)')
+    ->from($db_config['prefix'] . '_' . 'product')
+    ->where('product_name LIKE ' . $db->quote('%' . $keyword . '%'));
+$sql = $db->sql();
+
+$total = $db->query($sql)->fetchColumn();
+
+if (!empty($order_by)) {
+    $db->select('*')
+        ->order($order_by . ' ' . $stype)
+        ->limit($perpage)
+        ->offset(($page - 1) * $perpage);
+} else {
+    $db->select('*')
+        ->order('weight ASC')
+        ->limit($perpage)
+        ->offset(($page - 1) * $perpage);
+
+}
+
+$sql = $db->sql();
+$result = $db->query($sql);
+while ($row = $result->fetch()) {
+    $array_data[$row['id']] = $row;
+}
+
 
 //------------------
 // Viết code vào đây

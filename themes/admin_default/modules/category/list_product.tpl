@@ -1,5 +1,4 @@
 <!-- BEGIN: main -->
-<!-- BEGIN: keyword -->
 <div class="well">
     <form action="index.php" method="get">
         <input type="hidden" name="{NV_NAME_VARIABLE}" value="{MODULE_NAME}" />
@@ -10,28 +9,6 @@
                     <input class="form-control" type="text" value="{KEYWORD}" maxlength="64" name="keyword" placeholder="{LANG.search_key}" />
                 </div>
             </div>
-            <div class="col-xs-12 col-md-4">
-                <div class="form-group">
-                    <select class="form-control" name="order_by">
-                        <option value=""  selected="selected" >---Sắp xếp theo---</option>
-                        <option value="weight"  >Số thứ tự</option>
-                        <option value="product_name"  >Tên sản phẩm</option>
-                        <option value="product_desc"  >Mô tả sản phẩm</option>
-                        <option value="product_quantity"  >Số lượng sản phẩm</option>
-                        <option value="product_quantity"  >Số lượng sản phẩm</option>
-                        <option value="product_price"  >Giá sản phẩm</option>
-                    </select>
-                </div>
-            </div>
-            <div class="col-xs-12 col-md-4">
-                <div class="form-group">
-                    <select class="form-control" name="stype">
-                        <option value=""  selected="selected" >---Kiểu sắp xếp---</option>
-                        <option value="ASC"  >Tăng dần</option>
-                        <option value="DESC"  >Giảm dần</option>
-                    </select>
-                </div>
-            </div>
             <div class="col-xs-12 col-md-2">
                 <div class="form-group">
                     <input class="btn btn-primary" type="submit" value="{LANG.search}" />
@@ -39,9 +16,9 @@
             </div>
         </div>
 
-    </form>
+    </form> 
 </div>
-<!-- END: keyword -->
+
 <div class="table-responsive">
     <table class="table table-striped table-bordered table-hover">
         <thead>
@@ -60,8 +37,14 @@
         <tbody>
         <!-- BEGIN: loop -->
         <tr class="text-center">
-            <td class="">{ROW.stt}</td>
-            <td class="">{ROW.product_name}</td>
+            <td class="">
+                <select onchange="nv_change_weight({ROW.id})" name="weight" class="form-control weight_{ROW.id}" id="">
+                    <!-- BEGIN: weight -->
+                    <option value="{J}" {J_SELECT}>{J}</option>
+                    <!-- END: weight -->
+                </select>
+            </td>
+            <td class=""><a href="">{ROW.product_name}</td>
             <td class="">{ROW.category_id}</td>
             <td class="">{ROW.product_status}</td>
 
@@ -95,6 +78,22 @@
             }
         });
     });
+
+    function nv_change_weight(id) {
+        var new_weight = $('.weight_'+id).val();
+        $.ajax({
+            url: script_name + '?' + nv_name_variable + '=' + nv_module_name
+                + '&' + nv_fc_variable
+                + '=list_product&change_weight=1&id=' + id + '&new_weight='+new_weight,
+            success: function (result) {
+                if (result!='ERR'){
+
+                    location.reload();
+                }
+
+            }
+        });
+    }
 
 
 </script>
