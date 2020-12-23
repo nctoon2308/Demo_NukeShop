@@ -16,7 +16,7 @@ $page_title = $module_info['site_title'];
 $key_words = $module_info['keywords'];
 
 
-
+ 
 
 $row_detail = [];
 
@@ -28,11 +28,13 @@ $row_detail = $db->query($sql)->fetch();
 $sql = "SELECT category_name FROM `nv4_categories` WHERE id = " .$row_detail['category_id'];
 $row_cate = $db->query($sql)->fetch();
 
+$sql = "SELECT id,product_name, product_image FROM nv4_product ORDER BY RAND ( ) LIMIT 2";
+$row_rd = $db->query($sql)->fetchAll();
 
 
 
 
-$contents = nv_theme_category_detail($row_detail,$row_cate);
+$contents = nv_theme_category_detail($row_detail,$row_cate, $row_rd);
 
 
 

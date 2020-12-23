@@ -18,7 +18,7 @@ if (!defined('NV_IS_MOD_CATEGORY')) {
  * @param mixed $array_data
  * @return
  */
-function nv_theme_category_main($array_data, $row_cate, $perpage, $page, $total)
+function nv_theme_category_main($array_data)
 {
     global $module_info, $lang_module, $lang_global, $op, $page, $perpage, $row, $db, $module_name, $total, $row_cate;
 
@@ -62,6 +62,7 @@ if (!empty($array_data)) {
             $result = $db->query($sql3);
             $array_data = $result->fetch();
             $row['category_id'] = $array_data['category_name'];
+            $row['product_price'] = number_format($row['product_price']);
         }
 
 
@@ -75,7 +76,7 @@ if (!empty($array_data)) {
 
 
 
-$base_url = NV_BASE_ADMINURL . 'index.php?' . NV_LANG_VARIABLE . '=' . NV_LANG_DATA . '&amp;' . NV_NAME_VARIABLE . '=' . $module_name . '&amp;' . NV_OP_VARIABLE . '=list_product';
+$base_url = NV_BASE_SITEURL . 'index.php?' . NV_LANG_VARIABLE . '=' . NV_LANG_DATA . '&amp;' . NV_NAME_VARIABLE . '=' . $module_name . '&amp;' . NV_OP_VARIABLE . '=main';
 
 
 $generate_page = nv_generate_page($base_url, $total, $perpage, $page);
@@ -97,7 +98,7 @@ $xtpl->parse('main.GENERATE_PAGE');
  */
 function nv_theme_category_detail($row_detail,$row_cate)
 {
-    global $module_info, $lang_module, $lang_global, $op, $page, $perpage, $row, $db, $module_name, $total, $row_cate;
+    global $module_info, $lang_module, $lang_global, $op, $module_name;
 
     $xtpl = new XTemplate($op . '.tpl', NV_ROOTDIR . '/themes/' . $module_info['template'] . '/modules/' . $module_info['module_theme']);
     $xtpl->assign('LANG', $lang_module);
@@ -133,9 +134,9 @@ function nv_theme_category_detail($row_detail,$row_cate)
  * @param mixed $array_data
  * @return
  */
-function nv_theme_category_search($array_data, $row_cate, $perpage, $page, $total)
+function nv_theme_category_search($array_data)
 {
-    global $module_info, $lang_module, $lang_global, $op, $page, $perpage, $row, $db, $module_name, $total;
+    global $module_info, $lang_module, $lang_global, $op, $page, $perpage, $row, $db, $module_name, $total, $row_cate;
 
     $xtpl = new XTemplate($op . '.tpl', NV_ROOTDIR . '/themes/' . $module_info['template'] . '/modules/' . $module_info['module_theme']);
     $xtpl->assign('LANG', $lang_module);
@@ -153,49 +154,55 @@ function nv_theme_category_search($array_data, $row_cate, $perpage, $page, $tota
     }
 
 
-if (!empty($array_data)) {
-    $i = ($page - 1) * $perpage;
-    foreach ($array_data as $row) {
+    if (!empty($array_data)) {
+        $i = ($page - 1) * $perpage;
+        foreach ($array_data as $row) {
 
-        $row['stt'] = $i + 1;
-        if (!empty($row['product_image']))
-            $row['product_image'] = NV_BASE_SITEURL . NV_UPLOADS_DIR . '/' . $module_name . '/' . $row['product_image'];
-        $row['url_detail'] = NV_BASE_SITEURL .'index.php?'. NV_LANG_VARIABLE .'='. NV_LANG_DATA .'&amp;'. NV_NAME_VARIABLE .'='. $module_name .'&amp;'. NV_OP_VARIABLE .'=detail&amp;id='. $row['id'];
+            $row['stt'] = $i + 1;
+            if (!empty($row['product_image']))
+                $row['product_image'] = NV_BASE_SITEURL . NV_UPLOADS_DIR . '/' . $module_name . '/' . $row['product_image'];
 
-        //Trạng thái hàng hoá
-        if ($row['product_status'] == 0) {
-            $row['product_status'] = "Tạm ngưng bán";
-        } else {
-            $row['product_status'] = "Còn hàng";
+            $row['url_detail'] = NV_BASE_SITEURL .'index.php?'. NV_LANG_VARIABLE .'='. NV_LANG_DATA .'&amp;'. NV_NAME_VARIABLE .'='. $module_name .'&amp;'. NV_OP_VARIABLE .'=detail&amp;id='. $row['id'];
+            //Trạng thái hàng hoá
+            if ($row['product_status'] == 0) {
+                $row['product_status'] = "Tạm ngưng bán";
+            } else {
+                $row['product_status'] = "Còn hàng";
+            }
+            if (!empty($row['category_id'])) {
+                $db->sqlreset()
+                    ->select('*')
+                    ->from('nv4_categories')
+                    ->where('nv4_categories.id=' . $row['category_id']);
+                $sql3 = $db->sql();
+                $result = $db->query($sql3);
+                $array_data = $result->fetch();
+                $row['category_id'] = $array_data['category_name'];
+                $row['product_price'] = number_format($row['product_price']);
+            }
+
+
+            $xtpl->assign('ROW', $row);
+            $xtpl->parse('main.loop');
+            $i++;
+
         }
-        if (!empty($row['category_id'])) {
-            $db->sqlreset()
-                ->select('*')
-                ->from('nv4_categories')
-                ->where('nv4_categories.id=' . $row['category_id']);
-            $sql3 = $db->sql();
-            $result = $db->query($sql3);
-            $array_data = $result->fetch();
-            $row['category_id'] = $array_data['category_name'];
-        }
-
-
-        $xtpl->assign('ROW', $row);
-        $xtpl->parse('main.loop');
-        $i++;
-
     }
-}
 
 
-$base_url = NV_BASE_ADMINURL . 'index.php?' . NV_LANG_VARIABLE . '=' . NV_LANG_DATA . '&amp;' . NV_NAME_VARIABLE . '=' . $module_name . '&amp;' . NV_OP_VARIABLE . '=list_product';
 
 
-$generate_page = nv_generate_page($base_url, $total, $perpage, $page);
-$xtpl->assign('GENERATE_PAGE', $generate_page);
-$xtpl->parse('main.GENERATE_PAGE');
+    $base_url = NV_BASE_SITEURL . 'index.php?' . NV_LANG_VARIABLE . '=' . NV_LANG_DATA . '&amp;' . NV_NAME_VARIABLE . '=' . $module_name . '&amp;' . NV_OP_VARIABLE . '=main';
+
+
+    $generate_page = nv_generate_page($base_url, $total, $perpage, $page);
+    $xtpl->assign('GENERATE_PAGE', $generate_page);
+    $xtpl->parse('main.GENERATE_PAGE');
+
+
     //------------------
 
     $xtpl->parse('main');
     return $xtpl->text('main');
 }
+

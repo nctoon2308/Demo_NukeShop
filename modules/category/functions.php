@@ -14,4 +14,4 @@ if (!defined('NV_SYSTEM')) {
 
 define('NV_IS_MOD_CATEGORY', true);
 
-$allow_func = ['main', 'config', 'list'];
+$allow_func = ['main', 'detail', 'product','cart','search'];

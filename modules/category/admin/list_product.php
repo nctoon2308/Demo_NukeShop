@@ -121,6 +121,7 @@ if (!empty($array_row)) {
             $result = $db->query($sql3);
             $array_row = $result->fetch();
             $row['category_id'] = $array_row['category_name'];
+            $row['product_price'] = number_format($row['product_price']);
         }
 
         $row['url_delete'] = NV_BASE_ADMINURL . 'index.php?' . NV_LANG_VARIABLE . '=' . NV_LANG_DATA . '&amp;' . NV_NAME_VARIABLE . '=' . $module_name . '&amp;' . NV_OP_VARIABLE . '=list_product&amp;id=' . $row['id'] . '&action=delete&checksess=' . md5($row['id'] . NV_CHECK_SESSION);

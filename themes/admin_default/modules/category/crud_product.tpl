@@ -31,11 +31,11 @@
         <textarea name="product_desc" class="form-control" id="product_desc"  rows="10">{POST.product_desc}</textarea>
     </div>
     <div class="form-group">
-        <label for="product_quantity">Số lượng sản phẩm:</label>
+        <label for="product_quantity">Số lượng sản phẩm(Đơn vị: cái):</label>
         <input type="number" name="product_quantity" style="width: 250px" class="form-control" id="product_quantity" value="{POST.product_quantity}">
     </div>
     <div class="form-group">
-        <label for="product_quantity">Giá bán sản phẩm:</label>
+        <label for="product_quantity">Giá bán sản phẩm(Đơn vị: triệu đồng):</label>
         <input type="number" name="product_price" style="width: 250px" class="form-control" id="product_price" value="{POST.product_price}">
     </div>
     <div class="text-center"><input class="btn btn-primary" name="submit" type="submit" value="{LANG.save}" /></div>

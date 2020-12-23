@@ -7,3 +7,37 @@
  */
 
 /* Các tùy chỉnh CSS của giao diện nên để vào đây */
+.navbar-collapse, .navbar-default .navbar-form {
+    border-color: white;
+}
+
+.navbar-default {
+    background-color: white;
+    border-color: white;
+}
+
+.navbar-nav > .active > a, .navbar-default .navbar-nav > .active > a:hover, .navbar-default .navbar-nav > .active > a:focus {
+    color: #ffffff;
+    background-color: #ffffff;
+}
+
+#footer {
+    position: relative;
+    min-height: 300px;
+    width: 100%;
+    border-top-width: 1px;
+    border-top-style: solid;
+    border-top-color: #428BCA;
+    border-bottom-width: 1px;
+    border-bottom-style: solid;
+    border-bottom-color: #245682;
+    background-color: gray;
+    background-image: linear-gradient(to bottom,rgba(0,0,0,.1) 0,rgba(0,0,0,0) 100%);
+    padding: 20px 0;
+    font-size: 13px;
+}
+
+#container
+{
+    color: red;
+}

@@ -16,19 +16,20 @@ $page_title = $module_info['site_title'];
 $key_words = $module_info['keywords'];
 
 $array_data = [];
-
+ 
 //------------------
 
 //phan trang
 $page_title = $lang_module['main'];
 
-$perpage = 20;
+$perpage = 6;
 $page = $nv_Request->get_int('page', 'get', 1);
 
 //sắp xếp + tìm kiếm
 $keyword = $nv_Request->get_title('keyword', 'get', '');
 $order_by = $nv_Request->get_title('order_by', 'get', '');
 $stype = $nv_Request->get_title('stype', 'get', '');
+
 
 $db->sqlreset()
     ->select('COUNT(*)')

@@ -19,13 +19,14 @@ $array_data = [];
 
 //------------------
 
-
 $id = $nv_Request->get_title('id', 'post, get', '');
+
+
 
 //phan trang
 $page_title = $lang_module['main'];
 
-$perpage = 20;
+$perpage = 6;
 $page = $nv_Request->get_int('page', 'get', 1);
 
 //sắp xếp + tìm kiếm
@@ -33,13 +34,15 @@ $keyword = $nv_Request->get_title('keyword', 'get', '');
 $order_by = $nv_Request->get_title('order_by', 'get', '');
 $stype = $nv_Request->get_title('stype', 'get', '');
 
+
 $db->sqlreset()
     ->select('COUNT(*)')
     ->from($db_config['prefix'] . '_' . 'product')
-    ->where('category_id ='.$id);
+    ->where('category_id = '.$id);
 $sql = $db->sql();
 
 $total = $db->query($sql)->fetchColumn();
+
 if (!empty($order_by)) {
     $db->select('*')
         ->order($order_by . ' ' . $stype)
@@ -63,7 +66,9 @@ $sql = "SELECT id, category_name FROM `nv4_categories`";
 $row_cate = $db->query($sql)->fetchAll();
 /*echo "<pre>";
 print_r($row_cate);
-echo "</pre>";*/
+echo "</pre>";
+*/
+
 //------------------
 
 $contents = nv_theme_category_search($array_data, $row_cate, $perpage, $page, $total);
