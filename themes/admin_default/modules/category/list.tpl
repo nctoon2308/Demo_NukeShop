@@ -1,10 +1,7 @@
 <!-- BEGIN: main -->
-<!-- BEGIN: error -->
-<div class="alert alert-danger" role="alert">{ERROR}</div>
-<!-- END: error -->
-<!-- BEGIN: keyword -->
+
 <div class="well">
-    <form action="" method="get">
+    <form action="index.php" method="get">
         <input type="hidden" name="{NV_NAME_VARIABLE}" value="{MODULE_NAME}" />
         <input type="hidden" name="{NV_OP_VARIABLE}" value="{OP}" />
         <div class="row">
@@ -13,27 +10,6 @@
                     <input class="form-control" type="text" value="{KEYWORD}" maxlength="64" name="keyword" placeholder="{LANG.search_key}" />
                 </div>
             </div>
-
-            <div class="col-xs-12 col-md-4">
-                <div class="form-group">
-                    <select class="form-control" name="order_by">
-                        <option value=""  selected="selected" >---Sắp xếp theo---</option>
-                        <option value="weight"  >Số thứ tự</option>
-                        <option value="category_name"  >Tên danh mục</option>
-                        <option value="category_desc"  >Tiêu đề</option>
-                    </select>
-                </div>
-            </div>
-            <div class="col-xs-12 col-md-4">
-                <div class="form-group">
-                    <select class="form-control" name="stype">
-                        <option value=""  selected="selected" >---Kiểu sắp xếp---</option>
-                        <option value="ASC"  >Tăng dần</option>
-                        <option value="DESC"  >Giảm dần</option>
-                    </select>
-                </div>
-            </div>
-
             <div class="col-xs-12 col-md-2">
                 <div class="form-group">
                     <input class="btn btn-primary" type="submit" value="{LANG.search}" />
@@ -41,27 +17,17 @@
             </div>
         </div>
 
-
     </form>
 </div>
-<!-- END: keyword -->
 <div class="table-responsive">
     <table class="table table-striped table-bordered table-hover">
         <thead>
         <tr class="text-center">
-            <th class="text-nowrap">
-                Số thứ tự
-            </th>
-            <th class="text-nowrap">
-                Tên danh mục
-            </th>
-            <th class="text-nowrap">
-                Tiêu đề
-            </th>
+            <th class="text-nowrap">Số thứ tự</th>
+            <th class="text-nowrap">Tên danh mục</th>
+            <th class="text-nowrap">Tiêu đề</th>
             <th class="text-nowrap">Ảnh</th>
-            <th class="text-nowrap">
-                Mô tả
-            </th>
+            <th class="text-nowrap">Mô tả</th>
             <th class="text-nowrap text-center">Chức năng</th>
         </tr>
         </thead>
@@ -69,7 +35,11 @@
         <!-- BEGIN: loop -->
         <tr class="text-center">
             <td class="">
-                {ROW.stt}
+                <select onchange="nv_change_weight({ROW.id})" name="weight" class="form-control weight_{ROW.id}" id="">
+                    <!-- BEGIN: weight -->
+                    <option value="{J}" {J_SELECT}>{J}</option>
+                    <!-- END: weight -->
+                </select>
             </td>
             <td class="">{ROW.category_name}</td>
             <td class="">{ROW.category_slug}</td>

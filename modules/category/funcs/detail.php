@@ -15,13 +15,26 @@ if (!defined('NV_IS_MOD_CATEGORY')) {
 $page_title = $module_info['site_title'];
 $key_words = $module_info['keywords'];
 
-$array_data = [];
 
-//------------------
-// Viết code vào đây
-//------------------
 
-$contents = nv_theme_category_detail($array_data);
+
+$row_detail = [];
+
+$id = $nv_Request->get_title('id', 'post, get', '');
+
+$sql = "SELECT * FROM `nv4_product` WHERE id = " .$id; 
+$row_detail = $db->query($sql)->fetch();
+
+$sql = "SELECT category_name FROM `nv4_categories` WHERE id = " .$row_detail['category_id'];
+$row_cate = $db->query($sql)->fetch();
+
+
+
+
+
+$contents = nv_theme_category_detail($row_detail,$row_cate);
+
+
 
 include NV_ROOTDIR . '/includes/header.php';
 echo nv_site_theme($contents);
