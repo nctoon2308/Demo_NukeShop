@@ -23,27 +23,14 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="1c4b2056-cdc8-4371-8fff-d3e2279bf285" name="Default Changelist" comment="hiển thị dữ liệu cũ khi bấm sửa đơn hàng (thiếu trạng thái)">
+      <change afterPath="$PROJECT_DIR$/modules/category/funcs/cart.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/themes/demoshop/modules/category/cart.tpl" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/data/cache/modules/vi_sitemods_c853da9a0a9cc411a9eb5ebe2a7b954f.cache" beforeDir="false" afterPath="$PROJECT_DIR$/data/cache/modules/vi_sitemods_c853da9a0a9cc411a9eb5ebe2a7b954f.cache" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/data/config/config_ini.localhost.php" beforeDir="false" afterPath="$PROJECT_DIR$/data/config/config_ini.localhost.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/modules/category/admin/list_product.php" beforeDir="false" afterPath="$PROJECT_DIR$/modules/category/admin/list_product.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/modules/category/funcs/detail.php" beforeDir="false" afterPath="$PROJECT_DIR$/modules/category/funcs/detail.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/modules/category/funcs/main.php" beforeDir="false" afterPath="$PROJECT_DIR$/modules/category/funcs/main.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/modules/category/funcs/search.php" beforeDir="false" afterPath="$PROJECT_DIR$/modules/category/funcs/search.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/modules/category/functions.php" beforeDir="false" afterPath="$PROJECT_DIR$/modules/category/functions.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/modules/category/theme.php" beforeDir="false" afterPath="$PROJECT_DIR$/modules/category/theme.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/modules/category/version.php" beforeDir="false" afterPath="$PROJECT_DIR$/modules/category/version.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/shoplaptop.zip" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/themes/admin_default/modules/category/crud_product.tpl" beforeDir="false" afterPath="$PROJECT_DIR$/themes/admin_default/modules/category/crud_product.tpl" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/themes/admin_default/modules/category/list_product.tpl" beforeDir="false" afterPath="$PROJECT_DIR$/themes/admin_default/modules/category/list_product.tpl" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/themes/demoshop/css/category.css" beforeDir="false" afterPath="$PROJECT_DIR$/themes/demoshop/css/category.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/themes/demoshop/css/custom.css" beforeDir="false" afterPath="$PROJECT_DIR$/themes/demoshop/css/custom.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/themes/demoshop/layout/footer_extended.tpl" beforeDir="false" afterPath="$PROJECT_DIR$/themes/demoshop/layout/footer_extended.tpl" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/themes/demoshop/layout/header_extended.tpl" beforeDir="false" afterPath="$PROJECT_DIR$/themes/demoshop/layout/header_extended.tpl" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/themes/demoshop/layout/layout.main.tpl" beforeDir="false" afterPath="$PROJECT_DIR$/themes/demoshop/layout/layout.main.tpl" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/themes/demoshop/modules/category/block.bxproduct_center.tpl" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/themes/demoshop/modules/category/detail.tpl" beforeDir="false" afterPath="$PROJECT_DIR$/themes/demoshop/modules/category/detail.tpl" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/themes/demoshop/modules/category/main.tpl" beforeDir="false" afterPath="$PROJECT_DIR$/themes/demoshop/modules/category/main.tpl" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/themes/demoshop/modules/category/search.tpl" beforeDir="false" afterPath="$PROJECT_DIR$/themes/demoshop/modules/category/search.tpl" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -89,7 +76,7 @@
     <property name="RunOnceActivity.OpenProjectViewOnStart" value="true" />
     <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/../book_store" />
     <property name="nodejs_package_manager_path" value="npm" />
     <property name="settings.editor.selected.configurable" value="tasks.servers" />
     <property name="vue.rearranger.settings.migration" value="true" />
@@ -136,7 +123,8 @@
       <workItem from="1606440910703" duration="6694000" />
       <workItem from="1608624474849" duration="171000" />
       <workItem from="1608726879495" duration="2052000" />
-      <workItem from="1608729936491" duration="933000" />
+      <workItem from="1608729936491" duration="1850000" />
+      <workItem from="1608732181835" duration="2458000" />
     </task>
     <task id="LOCAL-00001" summary="tạo file .gitignore">
       <created>1605670749561</created>
@@ -406,7 +394,14 @@
       <option name="project" value="LOCAL" />
       <updated>1606449749896</updated>
     </task>
-    <option name="localTasksCounter" value="39" />
+    <task id="LOCAL-00039" summary="modal + sửa lỗi">
+      <created>1608731271800</created>
+      <option name="number" value="00039" />
+      <option name="presentableId" value="LOCAL-00039" />
+      <option name="project" value="LOCAL" />
+      <updated>1608731271800</updated>
+    </task>
+    <option name="localTasksCounter" value="40" />
     <servers>
       <GitHub url="https://github.com">
         <option name="repoAuthor" value="nctoon2308" />
@@ -442,7 +437,6 @@
     <option name="oldMeFiltersMigrated" value="true" />
   </component>
   <component name="VcsManagerConfiguration">
-    <MESSAGE value="sửa nhẹ" />
     <MESSAGE value="hiển thị dữ liệu cũ khi bấm sửa" />
     <MESSAGE value="hiện thị danh mục sản phẩm" />
     <MESSAGE value="thêm mục order" />
@@ -467,7 +461,8 @@
     <MESSAGE value="Sắp xếp kết quả tìm kiếm" />
     <MESSAGE value="hiện thị keyword khi sang trang khác" />
     <MESSAGE value="search list product" />
-    <option name="LAST_COMMIT_MESSAGE" value="search list product" />
+    <MESSAGE value="modal + sửa lỗi" />
+    <option name="LAST_COMMIT_MESSAGE" value="modal + sửa lỗi" />
   </component>
   <component name="WindowStateProjectService">
     <state x="741" y="273" key="#HTTP_Proxy" timestamp="1606205248676">
@@ -482,10 +477,10 @@
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
     <state x="718" y="329" key="#com.intellij.fileTypes.FileTypeChooser/0.0.1920.1040@0.0.1920.1040" timestamp="1605670679808" />
-    <state x="740" y="277" key="FileChooserDialogImpl" timestamp="1608729557115">
+    <state x="740" y="277" key="FileChooserDialogImpl" timestamp="1608732665746">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state x="740" y="277" key="FileChooserDialogImpl/0.0.1920.1040@0.0.1920.1040" timestamp="1608729557115" />
+    <state x="740" y="277" key="FileChooserDialogImpl/0.0.1920.1040@0.0.1920.1040" timestamp="1608732665746" />
     <state x="837" y="422" key="Github.ShareDialog" timestamp="1605668728026">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
@@ -494,10 +489,10 @@
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
     <state x="463" y="166" key="SettingsEditor/0.0.1920.1040@0.0.1920.1040" timestamp="1606205437543" />
-    <state x="552" y="255" key="Vcs.Push.Dialog.v2" timestamp="1606381888669">
+    <state x="552" y="255" key="Vcs.Push.Dialog.v2" timestamp="1608731272241">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state x="552" y="255" key="Vcs.Push.Dialog.v2/0.0.1920.1040@0.0.1920.1040" timestamp="1606381888669" />
+    <state x="552" y="255" key="Vcs.Push.Dialog.v2/0.0.1920.1040@0.0.1920.1040" timestamp="1608731272241" />
     <state x="573" y="133" key="com.intellij.openapi.editor.actions.MultiplePasteAction$ClipboardContentChooser" timestamp="1606378294277">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>

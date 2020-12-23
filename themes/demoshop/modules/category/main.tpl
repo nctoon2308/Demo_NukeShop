@@ -1,5 +1,6 @@
 
 <!-- BEGIN: main -->
+<a href="http://localhost/shoplaptop/category/cart/">Gio hang</a>
 <div class="row">
 	<div class="col-md-24">
 		<div id="cp_widget_f084c050-4ced-461a-a3b7-e0a9ff73da17">...</div><script type="text/javascript"> var cpo = []; cpo["_object"] ="cp_widget_f084c050-4ced-461a-a3b7-e0a9ff73da17"; cpo["_fid"] = "AsCAVve1qj-V"; var _cpmp = _cpmp || []; _cpmp.push(cpo); (function() { var cp = document.createElement("script"); cp.type = "text/javascript"; cp.async = true; cp.src = "//www.cincopa.com/media-platform/runtime/libasync.js"; var c = document.getElementsByTagName("script")[0]; c.parentNode.insertBefore(cp, c); })(); </script>
@@ -14,7 +15,6 @@
     <!-- BEGIN: cate -->
     <table class="table">
 		<h3> <i class="fa fa-laptop"></i> - <a href ="{CATE.url_product}">{CATE.category_name} </a>
-		<p>
     </table>
     <!-- END: cate -->
 

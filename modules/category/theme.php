@@ -206,3 +206,28 @@ function nv_theme_category_search($array_data)
     return $xtpl->text('main');
 }
 
+
+function nv_theme_category_cart($array_data)
+{
+    global $module_info, $lang_module, $lang_global, $op, $module_name;
+
+    $xtpl = new XTemplate($op . '.tpl', NV_ROOTDIR . '/themes/' . $module_info['template'] . '/modules/' . $module_info['module_theme']);
+    $xtpl->assign('LANG', $lang_module);
+    $xtpl->assign('GLANG', $lang_global);
+
+    //------------------
+    // Viết code vào đây
+
+    foreach ($_SESSION["cart"] as $key_cart => $val_cart_item)
+    {
+        $val_cart_item['image'] = NV_BASE_SITEURL . NV_UPLOADS_DIR . '/' . $module_name . '/' . $val_cart_item['image'];
+        $val_cart_item['total'] = $val_cart_item['qty'] * $val_cart_item['price'];
+        $xtpl->assign('CART', $val_cart_item);
+        $xtpl->parse('main.dataLoop');
+    }
+    //------------------
+
+    $xtpl->parse('main');
+    return $xtpl->text('main');
+}
+
