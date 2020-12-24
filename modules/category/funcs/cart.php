@@ -35,13 +35,14 @@ $post['submit'] = $nv_Request->get_title('submit', 'post', '');
 $post['customer_name'] = check_input($nv_Request->get_title('customer_name', 'post', ''));
 $post['customer_email'] = $nv_Request->get_title('customer_email', 'post', '');
 $post['customer_phone'] = check_input($nv_Request->get_title('customer_phone', 'post', ''));
-$post['total_product'] = check_input($nv_Request->get_title('total_product', 'post', ''));
-$post['total_bill'] = check_input($nv_Request->get_title('total_bill', 'post', ''));
+$post['total_product'] = check_input($nv_Request->get_int('total_product', 'post', ''));
+$post['total_bill'] = $nv_Request->get_int('total_bill', 'post', '');
 $post['customer_address'] = check_input($nv_Request->get_title('customer_address', 'post', ''));
 $post['order_note'] = check_input($nv_Request->get_title('order_note', 'post', ''));
 
 $product_id = $nv_Request->get_typed_array('product_id','post', '');
 $product_qty = $nv_Request->get_typed_array('qty_pro','post', '');
+
 
 
 
@@ -95,19 +96,19 @@ if(!empty($post['submit']))
     if (empty($post['customer_name']))
     {
         $error[] = 'Bạn chưa nhập tên';
-    }/*
+    }
     if (empty($post['customer_email']))
     {
         $error[] = 'Bạn chưa nhập email';
-    } else if (!preg_match("/^[a-z][a-z0-9_\.]{5,32}@[a-z0-9]{2,}(\.[a-z0-9]{2,4}){1,2}$/i", $post['email'])){
+    } else if (!preg_match("/^[a-z][a-z0-9_\.]{5,32}@[a-z0-9]{2,}(\.[a-z0-9]{2,4}){1,2}$/i", $post['customer_email'])){
         $error[] = 'Email sai định dạng';
     }
     if (empty($post['customer_phone']))
     {
         $error[] = 'Bạn chưa nhập số điện thoại';
-    } else if ((!preg_match('/[0-9][^#&<>\"~;$^%{}?a-zA-Z]{9,10}$/', $post['phone'])) || !is_numeric($post['phone'])) {
+    } else if ((!preg_match('/[0-9][^#&<>\"~;$^%{}?a-zA-Z]{9,10}$/', $post['customer_phone'])) || !is_numeric($post['customer_phone'])) {
         $error[] = 'số điện thoại không đúng định dạng';
-    }*/
+    }
     if (empty($post['customer_address']))
     {
         $error[] = 'Bạn chưa nhập địa chỉ';
@@ -123,6 +124,8 @@ if(!empty($post['submit']))
             $totalPriceProduct = $quantity*$product['product_price'];
             $post['total_price'] += $totalPriceProduct;
         }
+    }else{
+        $error[] = 'Bạn chọn sản phẩm';
     }
 
 
@@ -132,9 +135,7 @@ if(!empty($post['submit']))
         $sql = "INSERT INTO `nv4_orders2`(`customer_name`, `customer_email`, `customer_phone`, `customer_address`,  `order_note`, `created_at`,`order_status`,`total_product`, `total_price`) 
             VALUES (:customer_name,:customer_email,:customer_phone,:customer_address,:order_note,:created_at,:order_status, :total_product, :total_price)";
         $s = $db->prepare($sql);
-        echo "<pre>";
-        print_r($post['total_bill']);
-        echo "</pre>";
+
         $s->bindParam('customer_name', $post['customer_name']);
         $s->bindParam('customer_email', $post['customer_email']);
         $s->bindParam('customer_phone', $post['customer_phone']);
@@ -150,8 +151,6 @@ if(!empty($post['submit']))
                 $quantity = $product_qty[$product_ids_key];
                 $sql = "SELECT product_price FROM `nv4_product` WHERE id=" . $productId;
                 $product = $db->query($sql)->fetch();
-
-
                 $sql = "INSERT INTO `nv4_orderdetail2` (`order_id`,`product_id`,`quantity`,`product_price`)  VALUES (:order_id, :product_id, :quantity,:product_price)";
                 $s = $db->prepare($sql);
                 $s->bindValue('order_id', $order_id);

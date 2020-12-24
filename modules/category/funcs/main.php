@@ -34,7 +34,7 @@ $stype = $nv_Request->get_title('stype', 'get', '');
 $db->sqlreset()
     ->select('COUNT(*)')
     ->from($db_config['prefix'] . '_' . 'product')
-    ->where('product_name LIKE ' . $db->quote('%' . $keyword . '%'));
+    ->where('product_status = 1' );
 $sql = $db->sql();
 
 $total = $db->query($sql)->fetchColumn();

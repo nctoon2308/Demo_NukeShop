@@ -22,14 +22,13 @@ $row_detail = [];
 
 $id = $nv_Request->get_title('id', 'post, get', '');
 
-$sql = "SELECT * FROM `nv4_product` WHERE id = " .$id; 
+$sql = "SELECT * FROM `nv4_product` WHERE id = " .$id;
 $row_detail = $db->query($sql)->fetch();
 
 $sql = "SELECT category_name FROM `nv4_categories` WHERE id = " .$row_detail['category_id'];
 $row_cate = $db->query($sql)->fetch();
 
-$sql = "SELECT id,product_name, product_image FROM nv4_product ORDER BY RAND ( ) LIMIT 2";
-$row_rd = $db->query($sql)->fetchAll();
+
 
 
 

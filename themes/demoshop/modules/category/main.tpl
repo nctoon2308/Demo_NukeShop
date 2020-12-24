@@ -46,8 +46,6 @@
 			</p></div>
 			</a>
 			<div class="text-center">
-				
-				<a href="" class="btn btn-danger" role="button" onclick="addCart({ROW.id}, 'add')"><i class="fa fa-shopping-cart"></i> Add to cart</a>
 			</div>
 	</div>
 	</div>
@@ -59,49 +57,4 @@
 
 </div>
 
-<div id="showCart" class="modal fade" tabindex="-1" role="dialog" aria-labelledby="gridSystemModalLabel">
-	<div class="modal-dialog" role="document">
-		<div class="modal-content">
-			<div class="modal-header">
-				<button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
-				<h4 class="modal-title" id="gridSystemModalLabel">Thông tin mua hàng</h4>
-			</div>
-			<div class="modal-body">
-				<div class="row">
-					<div class="col-md-12">
-						<img alt=""  style="width:250px; height: 250px; " id="anh_showcart">
-					</div>
-					<div class="col-md-12">
-						<p>Tên sản phẩm:<span id="nameCart"> </span></p>
-						<p>Giá:<span id="priceCart"></span> VNĐ</p>
-						<p>Số lượng:<span id="qtyCart">1</span></p>
-					</div>
-				</div>
-
-			</div>
-
-		</div>
-	</div>
-</div>
-
-<script type="text/javascript">
-	function addCart(id, action) {
-		qty = $("#qty").val();
-		$.ajax({
-			url: nv_base_siteurl + '?' + nv_name_variable + '=' + nv_module_name + '&' + nv_fc_variable + '=cart',
-			method: 'POST',
-			dataType:"text",
-			data: {id: id,qty: qty, action: action},
-			success: function(data) {
-				img = $("#anh").attr("src");
-				$("#nameCart").text($("#nameProduct").text());
-				$("#priceCart").text($("#priceProduct").text());
-				$("#anh_showcart").attr({
-					'src': img,
-				});
-				$('#showCart').modal();
-			}
-		});
-	}
-</script>
 <!-- END: main --> 

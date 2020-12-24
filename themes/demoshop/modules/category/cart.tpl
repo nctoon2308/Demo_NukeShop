@@ -67,8 +67,8 @@
         <div class="form-group col-md-12">
             <label for="">Số điện thoại: (*)</label>
             <input type="text" class="form-control" name="customer_phone" value="">
-            <input type="text" class="form-control" name="total_product" value="{TOTAL_PRO}">
-            <input type="text" class="form-control" name="total_bill" value="{TOTAL_BILL}">
+            <input type="hidden" class="form-control" name="total_product" value="{TOTAL_PRO}">
+            <input type="hidden" class="form-control" name="total_bill" value="{TOTAL_BILL}">
         </div>
     </div>
     <div class="row">

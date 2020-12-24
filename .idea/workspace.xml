@@ -25,8 +25,8 @@
     <list default="true" id="1c4b2056-cdc8-4371-8fff-d3e2279bf285" name="Default Changelist" comment="hiển thị dữ liệu cũ khi bấm sửa đơn hàng (thiếu trạng thái)">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/modules/category/funcs/cart.php" beforeDir="false" afterPath="$PROJECT_DIR$/modules/category/funcs/cart.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/modules/category/theme.php" beforeDir="false" afterPath="$PROJECT_DIR$/modules/category/theme.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/themes/demoshop/modules/category/cart.tpl" beforeDir="false" afterPath="$PROJECT_DIR$/themes/demoshop/modules/category/cart.tpl" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/themes/demoshop/modules/category/main.tpl" beforeDir="false" afterPath="$PROJECT_DIR$/themes/demoshop/modules/category/main.tpl" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -72,7 +72,7 @@
     <property name="RunOnceActivity.OpenProjectViewOnStart" value="true" />
     <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$/../album" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/../book_store" />
     <property name="nodejs_package_manager_path" value="npm" />
     <property name="settings.editor.selected.configurable" value="tasks.servers" />
     <property name="vue.rearranger.settings.migration" value="true" />
@@ -121,7 +121,7 @@
       <workItem from="1608726879495" duration="2052000" />
       <workItem from="1608729936491" duration="1850000" />
       <workItem from="1608732181835" duration="3190000" />
-      <workItem from="1608792027876" duration="16319000" />
+      <workItem from="1608792027876" duration="17292000" />
     </task>
     <task id="LOCAL-00001" summary="tạo file .gitignore">
       <created>1605670749561</created>
@@ -412,7 +412,21 @@
       <option name="project" value="LOCAL" />
       <updated>1608796624364</updated>
     </task>
-    <option name="localTasksCounter" value="42" />
+    <task id="LOCAL-00042" summary="cart">
+      <created>1608811708382</created>
+      <option name="number" value="00042" />
+      <option name="presentableId" value="LOCAL-00042" />
+      <option name="project" value="LOCAL" />
+      <updated>1608811708382</updated>
+    </task>
+    <task id="LOCAL-00043" summary="admin">
+      <created>1608811855035</created>
+      <option name="number" value="00043" />
+      <option name="presentableId" value="LOCAL-00043" />
+      <option name="project" value="LOCAL" />
+      <updated>1608811855035</updated>
+    </task>
+    <option name="localTasksCounter" value="44" />
     <servers>
       <GitHub url="https://github.com">
         <option name="repoAuthor" value="nctoon2308" />
@@ -448,8 +462,6 @@
     <option name="oldMeFiltersMigrated" value="true" />
   </component>
   <component name="VcsManagerConfiguration">
-    <MESSAGE value="hiện thị danh mục sản phẩm" />
-    <MESSAGE value="thêm mục order" />
     <MESSAGE value="đổi tên bảng order và orderdetail" />
     <MESSAGE value="Thêm crud_order" />
     <MESSAGE value="thêm cột total" />
@@ -473,7 +485,9 @@
     <MESSAGE value="search list product" />
     <MESSAGE value="modal + sửa lỗi" />
     <MESSAGE value="session cart" />
-    <option name="LAST_COMMIT_MESSAGE" value="session cart" />
+    <MESSAGE value="cart" />
+    <MESSAGE value="admin" />
+    <option name="LAST_COMMIT_MESSAGE" value="admin" />
   </component>
   <component name="WindowStateProjectService">
     <state x="741" y="273" key="#HTTP_Proxy" timestamp="1606205248676">
@@ -488,10 +502,10 @@
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
     <state x="718" y="329" key="#com.intellij.fileTypes.FileTypeChooser/0.0.1920.1040@0.0.1920.1040" timestamp="1605670679808" />
-    <state x="740" y="277" key="FileChooserDialogImpl" timestamp="1608800346605">
+    <state x="740" y="277" key="FileChooserDialogImpl" timestamp="1608812391443">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state x="740" y="277" key="FileChooserDialogImpl/0.0.1920.1040@0.0.1920.1040" timestamp="1608800346605" />
+    <state x="740" y="277" key="FileChooserDialogImpl/0.0.1920.1040@0.0.1920.1040" timestamp="1608812391443" />
     <state x="837" y="422" key="Github.ShareDialog" timestamp="1605668728026">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
