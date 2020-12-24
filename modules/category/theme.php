@@ -229,7 +229,7 @@ function nv_theme_category_cart($array_data, $error, $alert)
 
         $val_cart_item['image'] = NV_BASE_SITEURL . NV_UPLOADS_DIR . '/' . $module_name . '/' . $val_cart_item['image'];
         $val_cart_item['total'] = $val_cart_item['qty'] * $val_cart_item['price'];
-        $total_bill += $val_cart_item['qty'] * $val_cart_item['price'];
+        $total_bill += ($val_cart_item['qty'] * $val_cart_item['price']);
         $total_pro += $val_cart_item['qty'];
         $xtpl->assign('CART', $val_cart_item);
         $xtpl->parse('main.dataLoop');

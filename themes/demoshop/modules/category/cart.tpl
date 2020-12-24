@@ -5,10 +5,10 @@
 <!-- BEGIN: alert -->
 <div class='alert alert-info' role="alert">{ALERT}</div>
 <!-- END: alert -->
+<form action="{NV_BASE_SITEURL}index.php?{NV_LANG_VARIABLE}={NV_LANG_DATA}&amp;{NV_NAME_VARIABLE}={MODULE_NAME}&amp;{NV_OP_VARIABLE}={OP}" method="post">
 <!-- BEGIN: dataLoop -->
 <h1>Giỏ hàng</h1>
-<form action="{NV_BASE_SITEURL}index.php?{NV_LANG_VARIABLE}={NV_LANG_DATA}&amp;{NV_NAME_VARIABLE}={MODULE_NAME}&amp;{NV_OP_VARIABLE}={OP}" method="post">
-<div id="listCart">
+<div class="listCart">
 <table id="tableCart">
     <input type="hidden" class="form-control" name="product_id[]" aria-label="..." value="{CART.id}"/>
     <input type="hidden" class="form-control" name="qty_pro[]" aria-label="..." value="{CART.qty}"/>
@@ -28,11 +28,11 @@
     </tr>
     <tr>
         <td>Giá sản phẩm</td>
-        <td><span id="price_{CART.id}">{CART.price}</span></td>
+        <td><span class="product_price" id="price_{CART.id}">{CART.price}</span></td>
     </tr>
     <tr>
         <td>Tổng tiền</td>
-        <td><span id="total_{CART.id}">{CART.total}</span></td>
+        <td><span class="product_price_total" id="total_{CART.id}">{CART.total}</span></td>
     </tr>
     <tr>
         <td>
@@ -43,11 +43,7 @@
 </div>
 
 <!-- END: dataLoop -->
-    <h2>Tổng sản phẩm: <b id="total_pro">{TOTAL_PRO}</b></h2>
-    <h2>Tổng tiền đơn hàng: <b id="total_bill">{TOTAL_BILL}</b> đ</h2>
-
-
-
+      <h2>Tổng tiền đơn hàng: <b id="total_bill2">{TOTAL_BILL}</b> đ</h2>
 
 
     <h1>Thông tin khách hàng</h1>
@@ -67,8 +63,9 @@
         <div class="form-group col-md-12">
             <label for="">Số điện thoại: (*)</label>
             <input type="text" class="form-control" name="customer_phone" value="">
-            <input type="hidden" class="form-control" name="total_product" value="{TOTAL_PRO}">
-            <input type="hidden" class="form-control" name="total_bill" value="{TOTAL_BILL}">
+
+            <input type="hidden" value="{TOTAL_BILL}" id="total_bill" name="total_bill">
+            <input type="hidden" value="{TOTAL_PRO}" id="total_product" name="total_product">
         </div>
     </div>
     <div class="row">
@@ -86,22 +83,40 @@
     <div class="text-center" ><input style="margin-top:10px;" class="btn btn-primary" name="submit" type="submit" value="Đặt hàng" /></div>
 </form>
     <script type="text/javascript">
-    function updateCart(id, action) {
-        qty = $("#qty_"+id).val();
-        price = $("#price_"+id).text();
-        /*total = $("#total_"+id).text();*/
-        $("#total_"+id).text(price*qty);
-        total = qty * price;
-        total_bill += total;
-        $.ajax({
-            url: nv_base_siteurl + '?' + nv_name_variable + '=' + nv_module_name + '&' + nv_fc_variable + '=cart',
-            method: 'POST',
-            dataType:"text",
-            data: {id: id,qty: qty, action: action},
-            success: function(data) {
-            }
-        });
-    }
+
+
+        function updateCart(id, action) {
+            var total = 0, total_product = 0;
+            $("input[name='qty']").each(function (index, value) {
+                var t = $(this);
+                var tr = t.closest("div.listCart");
+                var qty = t.val();
+                qty = parseInt(qty);
+                var pro =+ qty;
+                total_product += pro;
+                var price = tr.find("span.product_price").text();
+                price = parseFloat(price);
+                var tt = qty*price;
+                tr.find("span.product_price_total").text( new Intl.NumberFormat().format(tt));
+                total += tt;
+                $("#total_bill2").text(new Intl.NumberFormat().format(total));
+                $("#total_bill").attr({
+                    'value': new Intl.NumberFormat().format(total),
+                });
+                $("#total_product").attr({
+                    'value': new Intl.NumberFormat().format(total_product),
+                });
+
+                $.ajax({
+                    url: nv_base_siteurl + '?' + nv_name_variable + '=' + nv_module_name + '&' + nv_fc_variable + '=cart',
+                    method: 'POST',
+                    dataType:"text",
+                    data: {id: id,qty: qty, action: action},
+                    success: function(data) {
+                    }
+                });
+            });
+        }
     function destroyCart(id) {
         qty = 0;
         console.log(qty);

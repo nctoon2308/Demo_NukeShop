@@ -33,7 +33,7 @@ $row_cate = $db->query($sql)->fetch();
 
 
 
-$contents = nv_theme_category_detail($row_detail,$row_cate, $row_rd);
+$contents = nv_theme_category_detail($row_detail,$row_cate);
 
 
 

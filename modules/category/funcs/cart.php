@@ -132,6 +132,7 @@ if(!empty($post['submit']))
 
     if (empty($error)){
 
+
         $sql = "INSERT INTO `nv4_orders2`(`customer_name`, `customer_email`, `customer_phone`, `customer_address`,  `order_note`, `created_at`,`order_status`,`total_product`, `total_price`) 
             VALUES (:customer_name,:customer_email,:customer_phone,:customer_address,:order_note,:created_at,:order_status, :total_product, :total_price)";
         $s = $db->prepare($sql);
