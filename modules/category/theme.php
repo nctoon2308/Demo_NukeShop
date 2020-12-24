@@ -207,26 +207,44 @@ function nv_theme_category_search($array_data)
 }
 
 
-function nv_theme_category_cart($array_data)
+function nv_theme_category_cart($array_data, $error, $alert)
 {
-    global $module_info, $lang_module, $lang_global, $op, $module_name;
+    global $module_info, $lang_module, $lang_global, $op, $module_name, $post, $total_bill, $total_pro, $alert;
 
     $xtpl = new XTemplate($op . '.tpl', NV_ROOTDIR . '/themes/' . $module_info['template'] . '/modules/' . $module_info['module_theme']);
     $xtpl->assign('LANG', $lang_module);
     $xtpl->assign('GLANG', $lang_global);
+    $xtpl->assign('OP', $op);
+    $xtpl->assign('MODULE_NAME', $module_name);
+    $xtpl->assign('POST', $post);
+    $xtpl->assign('ERROR',implode('<br>',$error));
+    if (!empty($error)){
+        $xtpl->parse('main.error');
+    }
 
-    //------------------
-    // Viết code vào đây
 
     foreach ($_SESSION["cart"] as $key_cart => $val_cart_item)
     {
         $val_cart_item['id'] = $key_cart;
+
         $val_cart_item['image'] = NV_BASE_SITEURL . NV_UPLOADS_DIR . '/' . $module_name . '/' . $val_cart_item['image'];
         $val_cart_item['total'] = $val_cart_item['qty'] * $val_cart_item['price'];
+        $total_bill += $val_cart_item['qty'] * $val_cart_item['price'];
+        $total_pro += $val_cart_item['qty'];
         $xtpl->assign('CART', $val_cart_item);
         $xtpl->parse('main.dataLoop');
     }
+    $xtpl->assign('TOTAL_BILL', number_format($total_bill));
+    $xtpl->assign('TOTAL_PRO', number_format($total_pro));
     //------------------
+
+    /* Hiển thị alert */
+    if (!empty($alert)) {
+        $xtpl->assign('ALERT', $alert);
+        //hiển thị khối main.alert
+        $xtpl->parse('main.alert');
+    }
+    /* end alert */
 
     $xtpl->parse('main');
     return $xtpl->text('main');
