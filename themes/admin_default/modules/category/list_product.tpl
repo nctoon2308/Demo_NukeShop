@@ -38,11 +38,7 @@
         <!-- BEGIN: loop -->
         <tr class="text-center">
             <td class="">
-                <select onchange="nv_change_weight({ROW.id})" name="weight" class="form-control weight_{ROW.id}" id="">
-                    <!-- BEGIN: weight -->
-                    <option value="{J}" {J_SELECT}>{J}</option>
-                    <!-- END: weight -->
-                </select>
+                {ROW.stt}
             </td>
             <td class="">{ROW.product_name}</td>
             <td class="">{ROW.category_id}</td>
