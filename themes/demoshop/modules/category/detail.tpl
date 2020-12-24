@@ -23,7 +23,7 @@
 				</div>
 				<p><strong>Số lượng: <input type="number" min="1" value="1" name="qty" id="qty"></strong></p>
 				<p>
-					<a href="#" class="btn btn-danger" onclick="addCart({ROWDETAIL.id}, 'add')"><i class="fa fa-shopping-cart"></i> Add to cart</a>
+					<a href="#" class="btn btn-danger" onclick="addCart({ROWDETAIL.id}, 'add')"><i class="fa fa-shopping-cart"></i>Thêm vào giỏ hàng</a>
 				</p>
                 <br>
                 <p>{ROWDETAIL.product_desc}</p>

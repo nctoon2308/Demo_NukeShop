@@ -220,6 +220,7 @@ function nv_theme_category_cart($array_data)
 
     foreach ($_SESSION["cart"] as $key_cart => $val_cart_item)
     {
+        $val_cart_item['id'] = $key_cart;
         $val_cart_item['image'] = NV_BASE_SITEURL . NV_UPLOADS_DIR . '/' . $module_name . '/' . $val_cart_item['image'];
         $val_cart_item['total'] = $val_cart_item['qty'] * $val_cart_item['price'];
         $xtpl->assign('CART', $val_cart_item);

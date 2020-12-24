@@ -21,41 +21,47 @@ $array_data = [];
 if (isset($_POST['id']) && isset($_POST['qty'])){
     $id = $_POST['id'];
     $qty = $_POST['qty'];
+    $action = $_POST['action'];
 
     $sql = "SELECT * FROM `nv4_product` WHERE id = " .$id;
     $row_detail = $db->query($sql)->fetch();
-    if(!isset($_SESSION["cart"])){
-        $cart = array();
-        $cart[$id] = array(
-          'name' => $row_detail['product_name'],
-            'qty' => $qty,
-            'price' => $row_detail['product_price'],
-            'image' =>  $row_detail['product_image']
-        );
-    }else{
-        $cart = $_SESSION["cart"];
-        if (array_key_exists($id, $cart)){
-            $cart[$id] = array(
-                'name' => $row_detail['product_name'],
-                'qty' => (int)$cart[$id]['qty'] + $qty,
-                'price' => $row_detail['product_price'],
-                'image' =>  $row_detail['product_image']
-            );
-        }else{
+    if ($qty) {
+        if (!isset($_SESSION["cart"])) {
+            $cart = array();
             $cart[$id] = array(
                 'name' => $row_detail['product_name'],
                 'qty' => $qty,
                 'price' => $row_detail['product_price'],
-                'image' =>  $row_detail['product_image']
+                'image' => $row_detail['product_image']
             );
+        } else {
+            $cart = $_SESSION["cart"];
+            if (array_key_exists($id, $cart) && $action != 'update') {
+                $cart[$id] = array(
+                    'name' => $row_detail['product_name'],
+                    'qty' => (int)$cart[$id]['qty'] + $qty,
+                    'price' => $row_detail['product_price'],
+                    'image' => $row_detail['product_image']
+                );
+            } else {
+                $cart[$id] = array(
+                    'name' => $row_detail['product_name'],
+                    'qty' => $qty,
+                    'price' => $row_detail['product_price'],
+                    'image' => $row_detail['product_image']
+                );
+            }
         }
+    } else{
+        unset($cart[$id]);
+       /* echo "<pre>";
+        print_r($cart[$id]);
+        echo "</pre>";*/
     }
 
     $_SESSION["cart"] =$cart;
 
-    echo "<pre>";
-    print_r($cart);
-    echo "</pre>";
+
 }
 
 //------------------
