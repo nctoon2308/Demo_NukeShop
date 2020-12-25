@@ -8,6 +8,7 @@
        <div class="form-group">
            <label for="customer_name">Tên khách hàng:</label>
            <input type="text" name="customer_name" class="form-control" id="customer_name" value="{TOTAL.customer_name}">
+           <input type="hidden" name="id" class="form-control" id="id" value="{TOTAL.id}">
        </div>
        <div class="form-group">
            <label for="customer_email">Email:</label>
