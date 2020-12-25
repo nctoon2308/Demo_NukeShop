@@ -152,9 +152,10 @@ if(!empty($post['submit']))
                 $quantity = $product_qty[$product_ids_key];
                 $sql = "SELECT product_price FROM `nv4_product` WHERE id=" . $productId;
                 $product = $db->query($sql)->fetch();
-                $sql = "INSERT INTO `nv4_orderdetail2` (`order_id`,`product_id`,`quantity`,`product_price`)  VALUES (:order_id, :product_id, :quantity,:product_price)";
+                $sql = "INSERT INTO `nv4_orderdetail2` (`order_id`,`product_id`,`quantity`,`product_price`,`total`)  VALUES (:order_id, :product_id, :quantity,:product_price,:total)";
                 $s = $db->prepare($sql);
                 $s->bindValue('order_id', $order_id);
+                $s->bindValue('total', $quantity *$product['product_price'] );
                 $s->bindValue('product_id', $productId);
                 $s->bindValue('quantity', $quantity);
                 $s->bindValue('product_price', $product['product_price']);
